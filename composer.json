@@ -1,0 +1,51 @@
+{
+    "name": "immobiliarelabs/braze-sdk",
+    "description": "An sdk to interact with Braze API",
+    "keywords": ["braze", "sdk", "client"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Immobiliare Labs",
+            "email": "opensource@immobiliare.it"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "ext-json": "*",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0",
+        "symfony/http-client-contracts": "^2.4"
+    },
+    "require-dev": {
+        "symfony/http-client": "^5.3",
+        "nyholm/psr7": "^1.4",
+        "phpunit/phpunit": "^8.5",
+        "friendsofphp/php-cs-fixer": "^3.3"
+    },
+    "suggest": {
+        "symfony/http-client": "^5.3",
+        "nyholm/psr7": "^1.4",
+        "psr/http-client-implementation": "^1.0",
+        "psr/http-factory-implementation": "^1.0",
+        "psr/http-message-implementation": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ImmobiliareLabs\\BrazeSDK\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ImmobiliareLabs\\BrazeSDK\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit -c phpunit.xml.dist --no-coverage",
+        "test-coverage-text": "XDEBUG_MODE=coverage vendor/bin/phpunit -c phpunit.xml.dist --colors=never --coverage-text",
+        "test-coverage-html": "XDEBUG_MODE=coverage vendor/bin/phpunit -c phpunit.xml.dist --coverage-html coverage",
+        "php-cs-fixer": "vendor/bin/php-cs-fixer fix --verbose",
+        "php-cs-fixer-dry-run": "vendor/bin/php-cs-fixer fix --verbose --diff --dry-run"
+    }
+}
