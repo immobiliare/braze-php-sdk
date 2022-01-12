@@ -1,0 +1,9 @@
+<?php
+
+namespace ImmobiliareLabs\BrazeSDK\Response\Canvas;
+
+use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
+
+class DeleteScheduleResponse extends BaseResponse
+{
+}
