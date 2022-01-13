@@ -1,7 +1,7 @@
 Braze PHP SDK
 ============
 
-![CI](https://github.com/immobiliare/wsse-header-generator-php/workflows/CI/badge.svg)
+![CI](https://github.com/immobiliare/braze-php-sdk/workflows/CI/badge.svg)
 
 > This library provides a PHP interface to interact with Braze API.
 
