@@ -21,7 +21,7 @@
     "require-dev": {
         "symfony/http-client": "^5.3",
         "nyholm/psr7": "^1.4",
-        "phpunit/phpunit": "^8.5",
+        "phpunit/phpunit": "^8.5 || ^9.3",
         "friendsofphp/php-cs-fixer": "^3.3"
     },
     "suggest": {
