@@ -36,7 +36,7 @@ Alternatively, it is also possible to use any http client by creating the approp
 Before instantiating the SDK it is necessary to create the http client and its adapter.
 
 ```php
-use Immobiliare\BrazeSDK\ClientAdapter\SymfonyAdapter;
+use ImmobiliareLabs\BrazeSDK\ClientAdapter\SymfonyAdapter;
 use Symfony\Component\HttpClient\HttpClient;
 
 $client = HttpClient::create();
@@ -47,14 +47,17 @@ This example is for the Symfony http client, but the flow is the same whether yo
 Then you can create the SDK instance.
 
 ```php
-$braze = new Braze($adapter, 'my-api-key', Instance::EU01);
+use ImmobiliareLabs\BrazeSDK\Braze;
+use ImmobiliareLabs\BrazeSDK\Region;
+
+$braze = new Braze($adapter, 'my-api-key', Region::EU01);
 ```
 
 Now you can start making requests by creating one and passing it to the appropriate endpoint. 
 
 ```php
-use Immobiliare\BrazeSDK\Object\Event;
-use Immobiliare\BrazeSDK\Request\Users\TrackRequest;
+use ImmobiliareLabs\BrazeSDK\Object\Event;
+use ImmobiliareLabs\BrazeSDK\Request\Users\TrackRequest;
 
 $event = new Event();
 $event->external_id = 'user-id';
@@ -111,7 +114,7 @@ $braze->setDryRun(true);
 ### HTTP client adapter
 
 If, in your project, you already have a http client which does not implement one of the two supported interfaces (Symfony and PSR18), 
-and you don't want to install another one, just define an adapter that implements the ```Immobiliare\BrazeSDK\ClientAdapter\ClientAdapterInterface``` interface, 
+and you don't want to install another one, just define an adapter that implements the ```ImmobiliareLabs\BrazeSDK\ClientAdapter\ClientAdapterInterface``` interface, 
 and use it when instantiate the SDK.
 
 ### Parallel requests
