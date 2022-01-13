@@ -1,7 +1,7 @@
 {
     "name": "immobiliarelabs/braze-sdk",
     "description": "An sdk to interact with Braze API",
-    "keywords": ["braze", "sdk", "client"],
+    "keywords": ["client", "sdk", "api-client", "sdk-php", "client-library", "braze", "braze-api", "braze-sdk"],
     "type": "library",
     "license": "MIT",
     "authors": [
