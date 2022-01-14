@@ -3,18 +3,37 @@ Braze PHP SDK
 
 ![CI](https://github.com/immobiliare/braze-php-sdk/workflows/CI/badge.svg)
 
-> This library provides a PHP interface to interact with Braze API.
+> A PHP client to interact with Braze API
+
+[Braze](https://www.braze.com/) offers a cloud-based customer engagement platform for multichannel marketing. This SDK allows you to integrate its REST API into a PHP application.
 
 ## Table of Contents
 
+- [Features](#features)
 - [Install](#install)
 - [Usage](#usage)
+  - [Example](#example)
+  - [Endpoints](#endpoints)
+  - [Validation and dry-run](#validation-and-dry-run)
+  - [HTTP client adapter](#http-client-adapter)
+  - [Parallel requests](#parallel-requests)
 - [Compatibility](#compatibility)
 - [Requirements](#requirements)
+- [Powered Apps](#powered-apps)
 - [Contributing](#contributing)
 - [Changelog](#changelog)
+- [License](#license)
+
+## Features
+
+- Explicit representation of the API contract to write requests easily using the IDE autocomplete
+- Formal validation (strict and non-strict) of requests
+- Dry-run mode to simulate requests and validate them without actually performing calls
+- Ability to use any http client via an adapter. For PSR-18 compatible clients and the Symfony client, adapters are included in the SDK
+- Parallel API calls supported if the http client allows it (for example the Symfony one)
 
 ## Install
+
 Add the SDK as a dependency running:
 
 ```bash
@@ -32,6 +51,8 @@ Alternatively, it is also possible to use any http client by creating the approp
 
 
 ## Usage
+
+### Example
 
 Before instantiating the SDK it is necessary to create the http client and its adapter.
 
@@ -71,6 +92,8 @@ $request->events = [$event];
 
 $response = $braze->users()->track($request, false);
 ```
+
+You can see a few complete [examples](./examples) in the repository.
 
 ### Endpoints
 Endpoints are organized by url prefix. The SDK supports all the Braze endpoints:
@@ -141,11 +164,24 @@ The response objects will be filled with the values obtained only after the call
 
 * ext-json
 
+## Powered Apps
+
+Braze PHP SDK was created by the PHP team at [ImmobiliareLabs](https://github.com/immobiliare), the Tech dept of [Immobiliare.it](https://www.immobiliare.it), the #1 real estate company in Italy.
+
+We are currently using this SDK to stay in touch with our users.
+
+**If you are using Braze PHP SDK in production [drop us a message](mailto:opensource@immobiliare.it)**.
+
 ## Contributing
 
-See [contributing](./CONTRIBUTING.md) file.
+Any questions, bug reports or suggestions for improvement are very welcome. See the [contributing](./CONTRIBUTING.md) file for details on how to contribute.
 
 
 ## Changelog
 
 Please refer to the [changelog notes](CHANGELOG.md).
+
+## License
+
+Braze PHP SDK is licensed under the MIT license.  
+See the [LICENSE](./LICENSE) file for more information.
