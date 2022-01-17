@@ -10,7 +10,7 @@ trait HasRecipients
             return false;
         }
 
-        if (!is_countable($this->recipients)) {
+        if (!is_array($this->recipients)) {
             return false;
         }
 
