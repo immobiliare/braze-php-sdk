@@ -2,6 +2,11 @@ Braze PHP SDK
 ============
 
 ![CI](https://github.com/immobiliare/braze-php-sdk/workflows/CI/badge.svg)
+[![Latest Stable Version](http://poser.pugx.org/immobiliarelabs/braze-sdk/v)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![Total Downloads](http://poser.pugx.org/immobiliarelabs/braze-sdk/downloads)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![Latest Unstable Version](http://poser.pugx.org/immobiliarelabs/braze-sdk/v/unstable)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![License](http://poser.pugx.org/immobiliarelabs/braze-sdk/license)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![PHP Version Require](http://poser.pugx.org/immobiliarelabs/braze-sdk/require/php)](https://packagist.org/packages/immobiliarelabs/braze-sdk)
 
 > A PHP client to interact with Braze API
 
@@ -166,7 +171,7 @@ The response objects will be filled with the values obtained only after the call
 
 ## Powered Apps
 
-Braze PHP SDK was created by the PHP team at [ImmobiliareLabs](https://github.com/immobiliare), the Tech dept of [Immobiliare.it](https://www.immobiliare.it), the #1 real estate company in Italy.
+Braze PHP SDK was created by the PHP team at [ImmobiliareLabs](https://labs.immobiliare.it/), the Tech dept of [Immobiliare.it](https://www.immobiliare.it), the #1 real estate company in Italy.
 
 We are currently using this SDK to stay in touch with our users.
 
