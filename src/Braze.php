@@ -4,6 +4,7 @@ namespace ImmobiliareLabs\BrazeSDK;
 
 use ImmobiliareLabs\BrazeSDK\ClientAdapter\ClientAdapterInterface;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Campaigns;
+use ImmobiliareLabs\BrazeSDK\Endpoint\Canvas;
 use ImmobiliareLabs\BrazeSDK\Endpoint\ContentBlocks;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Email;
 use ImmobiliareLabs\BrazeSDK\Endpoint\EmailTemplates;
@@ -59,6 +60,11 @@ class Braze
     public function campaigns(): Campaigns
     {
         return $this->endpoint('campaigns', Campaigns::class);
+    }
+
+    public function canvas(): Canvas
+    {
+        return $this->endpoint('canvas', Canvas::class);
     }
 
     public function messages(): Messages
