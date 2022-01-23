@@ -29,7 +29,7 @@ class EndpointTest extends TestCase
 
         $clientAdapter->expects($this->once())
             ->method('makeRequest')
-            ->willReturn('not null');
+            ->willReturn('not null')
         ;
 
         $clientAdapter->expects($this->once())
