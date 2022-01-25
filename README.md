@@ -2,6 +2,7 @@ Braze PHP SDK
 ============
 
 ![CI](https://github.com/immobiliare/braze-php-sdk/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/immobiliare/braze-php-sdk/branch/main/graph/badge.svg?token=8H5dESJuiq)](https://codecov.io/gh/immobiliare/braze-php-sdk)
 [![Latest Stable Version](http://poser.pugx.org/immobiliarelabs/braze-sdk/v)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
 [![Total Downloads](http://poser.pugx.org/immobiliarelabs/braze-sdk/downloads)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
 [![Latest Unstable Version](http://poser.pugx.org/immobiliarelabs/braze-sdk/v/unstable)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
