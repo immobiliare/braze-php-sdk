@@ -33,5 +33,8 @@ jobs:
       - name: Check php-cs-fixer
         run: composer php-cs-fixer-dry-run
 
-      # TODO add coverage after set public repo
-      - run: vendor/bin/phpunit -c phpunit.xml.dist --coverage-text
+      - name: PHPUnit tests
+        run: vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover clover.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
