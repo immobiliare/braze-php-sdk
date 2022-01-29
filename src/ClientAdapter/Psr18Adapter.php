@@ -30,7 +30,7 @@ class Psr18Adapter implements ClientAdapterInterface
     /** @var array */
     private $headers = [];
 
-    /** @var ?string */
+    /** @var ?UriInterface */
     private $baseURI;
 
     public function __construct(ClientInterface $client, UriFactoryInterface $uriFactory, RequestFactoryInterface $requestFactory, StreamFactoryInterface $streamFactory)
