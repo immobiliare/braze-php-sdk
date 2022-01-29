@@ -20,15 +20,6 @@ class BrazeTest extends TestCase
         $this->instance = new Braze($adapter, 'API-KEY');
     }
 
-    /**
-     * @doesNotPerformAssertions
-     * @dataProvider endpointProvider
-     */
-    public function testEndpoints(string $endpoint): void
-    {
-        $this->instance->$endpoint();
-    }
-
     public function testDryRun(): void
     {
         $dryRun = true;
@@ -56,24 +47,5 @@ class BrazeTest extends TestCase
 
         $resolvedResponseCount = $this->instance->flush();
         $this->assertSame(1, $resolvedResponseCount);
-    }
-
-    public function endpointProvider(): array
-    {
-        return [
-            ['users'],
-            ['campaigns'],
-            ['messages'],
-            ['contentBlocks'],
-            ['emailTemplates'],
-            ['email'],
-            ['events'],
-            ['feed'],
-            ['purchases'],
-            ['sessions'],
-            ['sends'],
-            ['transactional'],
-            ['subscription'],
-        ];
     }
 }

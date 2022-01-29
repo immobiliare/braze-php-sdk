@@ -11,36 +11,49 @@ use ImmobiliareLabs\BrazeSDK\Exception\NotValidResponseException;
 use ImmobiliareLabs\BrazeSDK\Region;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Feed\ListRequest;
+use ImmobiliareLabs\BrazeSDK\Request\Sessions\AnalyticsRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\TrackRequest;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class EndpointTest extends TestCase
 {
+    /** @var ClientAdapterInterface|MockObject */
+    protected $clientAdapter;
+
+    /** @var Braze|MockObject */
+    protected $braze;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->clientAdapter = $this->createMock(ClientAdapterInterface::class);
+
+        $this->clientAdapter->expects($this->once())
+            ->method('makeRequest')
+            ->willReturn('not null')
+        ;
+
+        $this->braze = new Braze($this->clientAdapter, 'api-key', Region::EU01);
+        $this->braze->setValidation(false);
+    }
+
     /**
      * @dataProvider callsProvider
      */
-    public function testMakeRequest(string $endpoint, string $method, BaseRequest $request, int $httpCode, string $responseBody, bool $isSuccess)
+    public function testMakeRequest(string $endpointName, string $method, BaseRequest $request, int $httpCode, string $responseBody, bool $isSuccess)
     {
         if (null === json_decode($responseBody)) {
             $this->expectException(NotValidResponseException::class);
         }
 
-        $clientAdapter = $this->createMock(ClientAdapterInterface::class);
-
-        $clientAdapter->expects($this->once())
-            ->method('makeRequest')
-            ->willReturn('not null')
-        ;
-
-        $clientAdapter->expects($this->once())
+        $this->clientAdapter->expects($this->once())
             ->method('resolveResponse')
             ->willReturn(new ClientResolvedResponse($httpCode, $responseBody))
         ;
 
-        $braze = new Braze($clientAdapter, 'api-key', Region::EU01);
-        $braze->setValidation(false);
-
-        $endpoint = new $endpoint($braze);
+        $endpoint = new $endpointName($this->braze);
 
         $response = $endpoint->$method($request, true);
 
