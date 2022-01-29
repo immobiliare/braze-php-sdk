@@ -11,6 +11,7 @@ use ImmobiliareLabs\BrazeSDK\Endpoint\EmailTemplates;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Endpoint;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Events;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Feed;
+use ImmobiliareLabs\BrazeSDK\Endpoint\Kpi;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Messages;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Purchases;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Segments;
@@ -120,6 +121,11 @@ class Braze
     public function feed(): Feed
     {
         return $this->endpoint('feed', Feed::class);
+    }
+
+    public function kpi(): Feed
+    {
+        return $this->endpoint('kpi', Kpi::class);
     }
 
     public function subscription(): Subscription
