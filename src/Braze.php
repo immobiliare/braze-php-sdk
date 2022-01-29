@@ -123,7 +123,7 @@ class Braze
         return $this->endpoint('feed', Feed::class);
     }
 
-    public function kpi(): Feed
+    public function kpi(): Kpi
     {
         return $this->endpoint('kpi', Kpi::class);
     }
