@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Test\Object;
 
+use DateTimeImmutable;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Object\Event;
 use ImmobiliareLabs\BrazeSDK\Object\UserAlias;
@@ -30,6 +31,16 @@ final class UserAttributesTest extends TestCase
         $userAttributes->braze_id = null;
 
         $userAttributes->validate(false);
+    }
+
+    public function testJsonSerialize(): void
+    {
+        $userAttributes = new UserAttributes();
+        $userAttributes->dob = new DateTimeImmutable();
+
+        $serialized = $userAttributes->jsonSerialize();
+
+        $this->assertSame($userAttributes->dob->format('Y-m-d'), $serialized['dob']);
     }
 
     public function validProvider(): array
