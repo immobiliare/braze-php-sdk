@@ -61,7 +61,7 @@ class ApplePush extends BaseRequest
     /** @var ?ApplePushActionButton[] */
     public $buttons;
 
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         $dataToSerialize = parent::jsonSerialize();
 
