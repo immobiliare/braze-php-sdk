@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-03-28
+### Added
+- Add support to Symfony http client contracts v3
+
+## [1.1.0] - 2022-01-29
+### Added
+- Add Kpi endpoint
+
 ## [1.0.0] - 2022-01-21
 ### Added
 - Braze-PHP-SDK released
