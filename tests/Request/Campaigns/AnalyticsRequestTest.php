@@ -46,7 +46,7 @@ class AnalyticsRequestTest extends TestCase
         $analyticsRequest1 = new AnalyticsRequest();
 
         $analyticsRequest1->campaign_id = 'campaign_id';
-        $analyticsRequest1->length = 'length';
+        $analyticsRequest1->length = 1;
 
         return [
             [$analyticsRequest1]

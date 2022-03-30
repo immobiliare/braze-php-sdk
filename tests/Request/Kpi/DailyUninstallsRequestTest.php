@@ -33,7 +33,7 @@ class DailyUninstallsRequestTest extends TestCase
     {
         $dailyUninstallsRequest1 = new DailyUninstallsRequest();
 
-        $dailyUninstallsRequest1->length = 'length';
+        $dailyUninstallsRequest1->length = 1;
 
         return [
             [$dailyUninstallsRequest1]

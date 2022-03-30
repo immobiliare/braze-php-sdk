@@ -3,6 +3,7 @@
 namespace ImmobiliareLabs\BrazeSDK\Test\Request\Transactional;
 
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
+use ImmobiliareLabs\BrazeSDK\Object\Recipient;
 use ImmobiliareLabs\BrazeSDK\Request\Transactional\SendEmailRequest;
 use PHPUnit\Framework\TestCase;
 
@@ -46,7 +47,7 @@ class SendEmailRequestTest extends TestCase
         $sendEmailRequest1 = new SendEmailRequest();
 
         $sendEmailRequest1->campaign_id = 'campaign_id';
-        $sendEmailRequest1->recipients = 'recipients';
+        $sendEmailRequest1->recipients = [new Recipient()];
 
         return [
             [$sendEmailRequest1]

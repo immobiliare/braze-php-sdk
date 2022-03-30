@@ -3,6 +3,7 @@
 namespace ImmobiliareLabs\BrazeSDK\Test\Request\Canvas;
 
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
+use ImmobiliareLabs\BrazeSDK\Object\Schedule;
 use ImmobiliareLabs\BrazeSDK\Request\Canvas\UpdateScheduleRequest;
 use PHPUnit\Framework\TestCase;
 
@@ -59,7 +60,7 @@ class UpdateScheduleRequestTest extends TestCase
 
         $updateScheduleRequest1->canvas_id = 'canvas_id';
         $updateScheduleRequest1->schedule_id = 'schedule_id';
-        $updateScheduleRequest1->schedule = 'schedule';
+        $updateScheduleRequest1->schedule = new Schedule();
 
         return [
             [$updateScheduleRequest1]

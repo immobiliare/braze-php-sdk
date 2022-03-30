@@ -50,8 +50,6 @@ class InfoResponse extends BaseResponse
      */
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {
-        parent::fillFromArray($params, $allowExtraProperties);
-
         if (isset($params['created_at']) && is_string($params['created_at'])) {
             $this->created_at = new DateTimeImmutable($params['created_at']);
         }
@@ -63,5 +61,7 @@ class InfoResponse extends BaseResponse
         if (isset($params['tags']) && is_array($params['tags'])) {
             $this->tags = $params['tags'];
         }
+
+        parent::fillFromArray($params, $allowExtraProperties);
     }
 }
