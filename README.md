@@ -164,6 +164,7 @@ The response objects will be filled with the values obtained only after the call
 | Version | Status        | PHP compatibility     | 
 |---      |---            |---                    |
 | 1.x     | maintained    | `>=7.2`               |
+| 2.x     | maintained    | `>=8.0`               |
 
 
 ## Requirements

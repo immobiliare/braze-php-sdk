@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2022-03-28
+### Added
+- Add types to all the properties
+
+### Changed
+- Set minimum required PHP version to 8.0
+
 ## [1.2.0] - 2022-03-28
 ### Added
 - Add support to Symfony http client contracts v3
