@@ -13,11 +13,9 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
  */
 class CreateResponse extends BaseResponse
 {
-    /** @var ?string */
-    public $email_template_id;
+    public ?string $email_template_id = null;
 
-    /** @var ?DateTimeImmutable */
-    public $created_at;
+    public ?DateTimeImmutable $created_at = null;
 
     /**
      * @throws Exception

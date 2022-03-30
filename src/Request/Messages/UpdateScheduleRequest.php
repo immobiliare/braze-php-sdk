@@ -9,14 +9,11 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class UpdateScheduleRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $schedule_id;
+    public ?string $schedule_id = null;
 
-    /** @var ?Schedule */
-    public $schedule;
+    public ?Schedule $schedule = null;
 
-    /** @var ?Messages */
-    public $messages;
+    public ?Messages $messages = null;
 
     public function validate(bool $strict): void
     {

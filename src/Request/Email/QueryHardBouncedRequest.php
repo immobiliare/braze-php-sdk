@@ -6,18 +6,13 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class QueryHardBouncedRequest extends BaseRequest
 {
-    /** @var ?DateTimeInterface */
-    public $start_date;
+    public ?DateTimeInterface $start_date = null;
 
-    /** @var ?DateTimeInterface */
-    public $end_date;
+    public ?DateTimeInterface $end_date = null;
 
-    /** @var ?int */
-    public $limit;
+    public ?int $limit = null;
 
-    /** @var ?int */
-    public $offset;
+    public ?int $offset = null;
 
-    /** @var ?string */
-    public $email;
+    public ?string $email = null;
 }

@@ -9,23 +9,18 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class CreateScheduleRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $canvas_id;
+    public ?string $canvas_id = null;
 
     /** @var ?Recipient[] */
-    public $recipients;
+    public ?array $recipients = null;
 
-    /** @var ?array */
-    public $audience;
+    public ?array $audience = null;
 
-    /** @var ?bool */
-    public $broadcast;
+    public ?bool $broadcast = null;
 
-    /** @var ?array */
-    public $canvas_entry_properties;
+    public ?array $canvas_entry_properties = null;
 
-    /** @var ?Schedule */
-    public $schedule;
+    public ?Schedule $schedule = null;
 
     public function validate(bool $strict): void
     {

@@ -9,7 +9,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class RemoveExternalIDRequest extends BaseRequest
 {
     /** @var ?string[] */
-    public $external_ids;
+    public ?array $external_ids = null;
 
     public function validate(bool $strict): void
     {

@@ -8,20 +8,16 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class TriggerSendRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $canvas_id;
+    public ?string $canvas_id = null;
 
-    /** @var ?array */
-    public $canvas_entry_properties;
+    public ?array $canvas_entry_properties = null;
 
-    /** @var ?bool */
-    public $broadcast;
+    public ?bool $broadcast = null;
 
-    /** @var ?array */
-    public $audience;
+    public ?array $audience = null;
 
     /** @var ?Recipient[] */
-    public $recipients;
+    public ?array $recipients = null;
 
     public function validate(bool $strict): void
     {

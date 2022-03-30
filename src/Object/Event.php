@@ -10,29 +10,21 @@ use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
  */
 class Event extends BaseObject
 {
-    /** @var ?string */
-    public $external_id;
+    public ?string $external_id = null;
 
-    /** @var ?UserAlias */
-    public $user_alias;
+    public ?UserAlias $user_alias = null;
 
-    /** @var ?string */
-    public $braze_id;
+    public ?string $braze_id = null;
 
-    /** @var ?string */
-    public $app_id;
+    public ?string $app_id = null;
 
-    /** @var ?string */
-    public $name;
+    public ?string $name = null;
 
-    /** @var ?DateTimeInterface */
-    public $time;
+    public ?DateTimeInterface $time = null;
 
-    /** @var ?array */
-    public $properties;
+    public ?array $properties = null;
 
-    /** @var ?bool */
-    public $_update_existing_only;
+    public ?bool $_update_existing_only = null;
 
     public function validate(bool $strict): void
     {

@@ -7,14 +7,11 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class WebPushActionButton extends BaseRequest
 {
-    /** @var ?string */
-    public $text;
+    public ?string $text = null;
 
-    /** @var ?string */
-    public $action;
+    public ?string $action = null;
 
-    /** @var ?string */
-    public $uri;
+    public ?string $uri = null;
 
     public function validate(bool $strict): void
     {

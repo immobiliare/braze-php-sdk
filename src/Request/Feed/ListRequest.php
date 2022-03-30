@@ -6,12 +6,9 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ListRequest extends BaseRequest
 {
-    /** @var ?int */
-    public $page;
+    public ?int $page = null;
 
-    /** @var ?bool */
-    public $include_archived;
+    public ?bool $include_archived = null;
 
-    /** @var ?string */
-    public $sort_direction;
+    public ?string $sort_direction = null;
 }

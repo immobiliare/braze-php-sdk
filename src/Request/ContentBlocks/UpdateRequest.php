@@ -6,8 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 
 class UpdateRequest extends CreateRequest
 {
-    /** @var ?string */
-    public $content_block_id;
+    public ?string $content_block_id = null;
 
     public function validate(bool $strict): void
     {

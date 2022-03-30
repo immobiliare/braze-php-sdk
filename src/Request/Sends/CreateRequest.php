@@ -7,11 +7,9 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class CreateRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $campaign_id;
+    public ?string $campaign_id = null;
 
-    /** @var ?string */
-    public $send_id;
+    public ?string $send_id = null;
 
     public function validate(bool $strict): void
     {

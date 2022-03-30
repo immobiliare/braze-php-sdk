@@ -6,11 +6,9 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class ExportByIdentifierResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $users;
+    public ?array $users = null;
 
-    /** @var ?array */
-    public $invalid_user_ids;
+    public ?array $invalid_user_ids = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

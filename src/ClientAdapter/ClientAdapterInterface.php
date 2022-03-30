@@ -19,12 +19,12 @@ interface ClientAdapterInterface
      *
      * @throws TransportException
      */
-    public function makeRequest(string $method, string $path, ?string $body = null);
+    public function makeRequest(string $method, string $path, ?string $body = null): mixed;
 
     /**
      * @param mixed $httpResponse the real response or a reference to it. It's the value returned by the makeRequest method
      *
      * @throws TransportException
      */
-    public function resolveResponse($httpResponse): ClientResolvedResponse;
+    public function resolveResponse(mixed $httpResponse): ClientResolvedResponse;
 }

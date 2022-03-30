@@ -6,8 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class SummaryResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $data;
+    public ?array $data = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

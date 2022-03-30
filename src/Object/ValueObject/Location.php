@@ -6,9 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class Location extends BaseObject
 {
-    /** @var ?string */
-    public $longitude;
+    public ?string $longitude = null;
 
-    /** @var ?string */
-    public $latitude;
+    public ?string $latitude = null;
 }

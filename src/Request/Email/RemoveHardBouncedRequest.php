@@ -8,7 +8,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class RemoveHardBouncedRequest extends BaseRequest
 {
     /** @var ?string|?array */
-    public $email;
+    public string|array|null $email = null;
 
     public function validate(bool $strict): void
     {

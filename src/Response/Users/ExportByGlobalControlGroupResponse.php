@@ -6,9 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class ExportByGlobalControlGroupResponse extends BaseResponse
 {
-    /** @var ?string */
-    public $object_prefix;
+    public ?string $object_prefix = null;
 
-    /** @var ?string */
-    public $url;
+    public ?string $url = null;
 }

@@ -7,20 +7,15 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class Webhook extends BaseRequest
 {
-    /** @var ?string */
-    public $url;
+    public ?string $url = null;
 
-    /** @var ?string */
-    public $request_method;
+    public ?string $request_method = null;
 
-    /** @var ?array */
-    public $request_headers;
+    public ?array $request_headers = null;
 
-    /** @var ?string */
-    public $body;
+    public ?string $body = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
     public function validate(bool $strict): void
     {

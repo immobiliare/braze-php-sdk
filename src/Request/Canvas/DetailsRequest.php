@@ -7,8 +7,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class DetailsRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $canvas_id;
+    public ?string $canvas_id = null;
 
     public function validate(bool $strict): void
     {

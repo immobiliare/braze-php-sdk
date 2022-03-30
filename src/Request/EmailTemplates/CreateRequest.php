@@ -7,26 +7,19 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class CreateRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $template_name;
+    public ?string $template_name = null;
 
-    /** @var ?string */
-    public $subject;
+    public ?string $subject = null;
 
-    /** @var ?string */
-    public $body;
+    public ?string $body = null;
 
-    /** @var ?string */
-    public $plaintext_body;
+    public ?string $plaintext_body = null;
 
-    /** @var ?string */
-    public $preheader;
+    public ?string $preheader = null;
 
-    /** @var ?array */
-    public $tags;
+    public ?array $tags = null;
 
-    /** @var ?bool */
-    public $should_inline_css;
+    public ?bool $should_inline_css = null;
 
     public function validate(bool $strict): void
     {

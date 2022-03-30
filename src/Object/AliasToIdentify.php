@@ -9,11 +9,9 @@ use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
  */
 class AliasToIdentify extends BaseObject
 {
-    /** @var ?string */
-    public $external_id;
+    public ?string $external_id = null;
 
-    /** @var ?UserAlias */
-    public $user_alias;
+    public ?UserAlias $user_alias = null;
 
     public function validate(bool $strict): void
     {

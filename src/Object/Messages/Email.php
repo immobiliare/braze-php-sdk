@@ -10,44 +10,32 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
  */
 class Email extends BaseObject
 {
-    /** @var ?string */
-    public $app_id;
+    public ?string $app_id = null;
 
-    /** @var ?string */
-    public $subject;
+    public ?string $subject = null;
 
-    /** @var ?string */
-    public $from; // Display Name <email@address.com>
+    public ?string $from = null; // Display Name <email@address.com>
 
-    /** @var ?string */
-    public $bcc;
+    public ?string $bcc = null;
 
-    /** @var ?string */
-    public $body;
+    public ?string $body = null;
 
-    /** @var ?string */
-    public $plaintext_body;
+    public ?string $plaintext_body = null;
 
-    /** @var ?string */
-    public $preheader;
+    public ?string $preheader = null;
 
-    /** @var ?string */
-    public $email_template_id;
+    public ?string $email_template_id = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?array */
-    public $extras;
+    public ?array $extras = null;
 
-    /** @var ?array */
-    public $headers;
+    public ?array $headers = null;
 
-    /** @var ?bool */
-    public $should_inline_css;
+    public ?bool $should_inline_css = null;
 
     /** @var ?EmailAttachment[] */
-    public $attachments;
+    public ?array $attachments = null;
 
     public function validate(bool $strict): void
     {

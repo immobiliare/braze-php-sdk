@@ -7,38 +7,28 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class WebPush extends BaseRequest
 {
-    /** @var ?string */
-    public $alert;
+    public ?string $alert = null;
 
-    /** @var ?string */
-    public $title;
+    public ?string $title = null;
 
-    /** @var ?array */
-    public $extra;
+    public ?array $extra = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?string */
-    public $custom_uri;
+    public ?string $custom_uri = null;
 
-    /** @var ?string */
-    public $image_url;
+    public ?string $image_url = null;
 
-    /** @var ?string */
-    public $large_image_url;
+    public ?string $large_image_url = null;
 
-    /** @var ?bool */
-    public $require_interaction;
+    public ?bool $require_interaction = null;
 
-    /** @var ?int */
-    public $time_to_live;
+    public ?int $time_to_live = null;
 
-    /** @var ?bool */
-    public $send_to_most_recent_device_only;
+    public ?bool $send_to_most_recent_device_only = null;
 
     /** @var ?WebPushActionButton[] */
-    public $buttons;
+    public ?array $buttons = null;
 
     public function validate(bool $strict): void
     {

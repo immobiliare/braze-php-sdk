@@ -7,8 +7,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class DetailsRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $card_id;
+    public ?string $card_id = null;
 
     public function validate(bool $strict): void
     {

@@ -7,15 +7,11 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ListRequest extends BaseRequest
 {
-    /** @var ?DateTimeInterface */
-    public $modified_after;
+    public ?DateTimeInterface $modified_after = null;
 
-    /** @var ?DateTimeInterface */
-    public $modified_before;
+    public ?DateTimeInterface $modified_before = null;
 
-    /** @var ?int */
-    public $limit;
+    public ?int $limit = null;
 
-    /** @var ?int */
-    public $offset;
+    public ?int $offset = null;
 }

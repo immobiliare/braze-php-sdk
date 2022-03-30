@@ -7,17 +7,16 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class GetStatusRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $subscription_group_id;
+    public ?string $subscription_group_id = null;
 
     /** @var ?string|string[] */
-    public $external_id;
+    public string|array|null $external_id = null;
 
     /** @var ?string|string[] */
-    public $email;
+    public string|array|null $email = null;
 
     /** @var ?string|string[] */
-    public $phone;
+    public string|array|null $phone = null;
 
     public function validate(bool $strict): void
     {

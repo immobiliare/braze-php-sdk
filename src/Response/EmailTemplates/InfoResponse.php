@@ -8,42 +8,31 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class InfoResponse extends BaseResponse
 {
-    /** @var ?string */
-    public $email_template_id;
+    public ?string $email_template_id = null;
 
-    /** @var ?string */
-    public $template_name;
+    public ?string $template_name = null;
 
-    /** @var ?string */
-    public $description;
+    public ?string $description = null;
 
-    /** @var ?string */
-    public $subject;
+    public ?string $subject = null;
 
-    /** @var ?string */
-    public $preheader;
+    public ?string $preheader = null;
 
-    /** @var ?string */
-    public $body;
+    public ?string $body = null;
 
-    /** @var ?string */
-    public $plaintext_body;
+    public ?string $plaintext_body = null;
 
-    /** @var ?bool */
-    public $should_inline_css;
+    public ?bool $should_inline_css = null;
 
     /**
      * @todo: check type: string or array?
      *
-     * @var ?array
      */
-    public $tags;
+    public ?array $tags = null;
 
-    /** @var ?DateTimeImmutable */
-    public $created_at;
+    public ?DateTimeImmutable $created_at = null;
 
-    /** @var ?DateTimeImmutable */
-    public $updated_at;
+    public ?DateTimeImmutable $updated_at = null;
 
     /**
      * @throws Exception

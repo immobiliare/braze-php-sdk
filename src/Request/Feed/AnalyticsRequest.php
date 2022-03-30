@@ -8,17 +8,13 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class AnalyticsRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $card_id;
+    public ?string $card_id = null;
 
-    /** @var ?int */
-    public $length;
+    public ?int $length = null;
 
-    /** @var ?string */
-    public $unit;
+    public ?string $unit = null;
 
-    /** @var ?DateTimeInterface */
-    public $ending_at;
+    public ?DateTimeInterface $ending_at = null;
 
     public function validate(bool $strict): void
     {

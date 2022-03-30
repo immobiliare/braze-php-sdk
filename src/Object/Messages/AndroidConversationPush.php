@@ -7,17 +7,15 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class AndroidConversationPush extends BaseRequest
 {
-    /** @var ?string */
-    public $shortcut_id;
+    public ?string $shortcut_id = null;
 
-    /** @var ?string */
-    public $reply_person_id;
+    public ?string $reply_person_id = null;
 
     /** @var ?AndroidConversationPushMessage[] */
-    public $messages;
+    public ?array $messages = null;
 
     /** @var ?AndroidConversationPushPerson[] */
-    public $persons;
+    public ?array $persons = null;
 
     public function validate(bool $strict): void
     {

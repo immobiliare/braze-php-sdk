@@ -7,59 +7,42 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class AndroidPush extends BaseRequest
 {
-    /** @var ?string */
-    public $alert;
+    public ?string $alert = null;
 
-    /** @var ?string */
-    public $title;
+    public ?string $title = null;
 
-    /** @var ?array */
-    public $extra;
+    public ?array $extra = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?string */
-    public $notification_channel_id;
+    public ?string $notification_channel_id = null;
 
-    /** @var ?int */
-    public $priority;
+    public ?int $priority = null;
 
-    /** @var ?bool */
-    public $send_to_sync;
+    public ?bool $send_to_sync = null;
 
-    /** @var ?string */
-    public $collapse_key;
+    public ?string $collapse_key = null;
 
-    /** @var ?string */
-    public $sound;
+    public ?string $sound = null;
 
-    /** @var ?string */
-    public $custom_uri;
+    public ?string $custom_uri = null;
 
-    /** @var ?string */
-    public $summary_text;
+    public ?string $summary_text = null;
 
-    /** @var ?int */
-    public $time_to_live;
+    public ?int $time_to_live = null;
 
-    /** @var ?int */
-    public $notification_id;
+    public ?int $notification_id = null;
 
-    /** @var ?string */
-    public $push_icon_image_url;
+    public ?string $push_icon_image_url = null;
 
-    /** @var ?int */
-    public $accent_color;
+    public ?int $accent_color = null;
 
-    /** @var ?bool */
-    public $send_to_most_recent_device_only;
+    public ?bool $send_to_most_recent_device_only = null;
 
     /** @var ?AndroidPushActionButton[] */
-    public $buttons;
+    public ?array $buttons = null;
 
-    /** @var ?AndroidConversationPush */
-    public $conversation_data;
+    public ?AndroidConversationPush $conversation_data = null;
 
     public function validate(bool $strict): void
     {

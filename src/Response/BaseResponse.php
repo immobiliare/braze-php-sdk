@@ -6,17 +6,13 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 abstract class BaseResponse extends BaseObject
 {
-    /** @var ?bool */
-    private $isSuccess;
+    private ?bool $isSuccess;
 
-    /** @var ?int */
-    private $httpStatusCode;
+    private ?int $httpStatusCode;
 
-    /** @var ?string */
-    private $fatalError;
+    private ?string $fatalError;
 
-    /** @var ?array */
-    private $minorErrors;
+    private ?array $minorErrors;
 
     public function setIsSuccess(bool $isSuccess): void
     {

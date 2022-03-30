@@ -6,14 +6,11 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class SendEmailResponse extends BaseResponse
 {
-    /** @var ?string */
-    public $dispatch_id;
+    public ?string $dispatch_id = null;
 
-    /** @var ?string */
-    public $status;
+    public ?string $status = null;
 
-    /** @var ?array */
-    public $metadata;
+    public ?array $metadata = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

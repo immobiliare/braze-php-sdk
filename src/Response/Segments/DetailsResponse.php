@@ -7,23 +7,17 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class DetailsResponse extends BaseResponse
 {
-    /** @var ?DateTimeInterface */
-    public $created_at;
+    public ?DateTimeInterface $created_at = null;
 
-    /** @var ?DateTimeInterface */
-    public $updated_at;
+    public ?DateTimeInterface $updated_at = null;
 
-    /** @var ?string */
-    public $name;
+    public ?string $name = null;
 
-    /** @var ?string */
-    public $description;
+    public ?string $description = null;
 
-    /** @var ?string */
-    public $text_description;
+    public ?string $text_description = null;
 
-    /** @var ?array */
-    public $tags;
+    public ?array $tags = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

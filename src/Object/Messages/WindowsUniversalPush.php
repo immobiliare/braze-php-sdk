@@ -7,26 +7,19 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class WindowsUniversalPush extends BaseRequest
 {
-    /** @var ?string */
-    public $push_type;
+    public ?string $push_type = null;
 
-    /** @var ?string */
-    public $toast_text1;
+    public ?string $toast_text1 = null;
 
-    /** @var ?string */
-    public $toast_text2;
+    public ?string $toast_text2 = null;
 
-    /** @var ?string */
-    public $toast_text3;
+    public ?string $toast_text3 = null;
 
-    /** @var ?string */
-    public $toast_text_img_name;
+    public ?string $toast_text_img_name = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?string */
-    public $extra_launch_string;
+    public ?string $extra_launch_string = null;
 
     public function validate(bool $strict): void
     {

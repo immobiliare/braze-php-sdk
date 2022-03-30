@@ -23,20 +23,16 @@ use ImmobiliareLabs\BrazeSDK\Endpoint\Users;
 
 class Braze
 {
-    /** @var Client */
-    private $client;
+    private Client $client;
 
     /** @var Endpoint[] */
-    private $endpoints = [];
+    private array $endpoints = [];
 
-    /** @var bool */
-    private $dryRun = false;
+    private bool $dryRun = false;
 
-    /** @var bool */
-    private $validation = true;
+    private bool $validation = true;
 
-    /** @var bool */
-    private $strictValidation = true;
+    private bool $strictValidation = true;
 
     public function __construct(ClientAdapterInterface $clientAdapter, string $apiKey, ?string $restEndpoint = null)
     {

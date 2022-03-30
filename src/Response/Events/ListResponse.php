@@ -7,5 +7,5 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 class ListResponse extends BaseResponse
 {
     /** @var ?string[] */
-    public $events;
+    public ?array $events = null;
 }

@@ -15,23 +15,17 @@ use Psr\Http\Message\UriInterface;
 
 class Psr18Adapter implements ClientAdapterInterface
 {
-    /** @var ClientInterface */
-    private $client;
+    private ClientInterface $client;
 
-    /** @var UriFactoryInterface */
-    private $uriFactory;
+    private UriFactoryInterface $uriFactory;
 
-    /** @var RequestFactoryInterface */
-    private $requestFactory;
+    private RequestFactoryInterface $requestFactory;
 
-    /** @var StreamFactoryInterface */
-    private $streamFactory;
+    private StreamFactoryInterface $streamFactory;
 
-    /** @var array */
-    private $headers = [];
+    private array $headers = [];
 
-    /** @var ?UriInterface */
-    private $baseURI;
+    private ?UriInterface $baseURI = null;
 
     public function __construct(ClientInterface $client, UriFactoryInterface $uriFactory, RequestFactoryInterface $requestFactory, StreamFactoryInterface $streamFactory)
     {

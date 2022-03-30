@@ -11,13 +11,13 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class TrackRequest extends BaseRequest
 {
     /** @var ?UserAttributes[] */
-    public $attributes;
+    public ?array $attributes = null;
 
     /** @var ?Event[] */
-    public $events;
+    public ?array $events = null;
 
     /** @var ?Purchase[] */
-    public $purchases;
+    public ?array $purchases = null;
 
     public function validate(bool $strict): void
     {

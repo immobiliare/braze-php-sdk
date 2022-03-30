@@ -8,14 +8,11 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class CreateResponse extends BaseResponse
 {
-    /** @var ?string */
-    public $content_block_id;
+    public ?string $content_block_id = null;
 
-    /** @var ?string */
-    public $liquid_tag;
+    public ?string $liquid_tag = null;
 
-    /** @var ?DateTimeImmutable */
-    public $created_at;
+    public ?DateTimeImmutable $created_at = null;
 
     /**
      * @throws Exception

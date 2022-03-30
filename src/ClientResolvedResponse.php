@@ -4,11 +4,9 @@ namespace ImmobiliareLabs\BrazeSDK;
 
 class ClientResolvedResponse
 {
-    /** @var int */
-    private $statusCode;
+    private int $statusCode;
 
-    /** @var string */
-    private $body;
+    private string $body;
 
     public function __construct(int $statusCode, string $body)
     {

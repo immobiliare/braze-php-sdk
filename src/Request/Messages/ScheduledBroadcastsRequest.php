@@ -8,8 +8,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ScheduledBroadcastsRequest extends BaseRequest
 {
-    /** @var ?DateTimeInterface */
-    public $end_time;
+    public ?DateTimeInterface $end_time = null;
 
     public function validate(bool $strict): void
     {

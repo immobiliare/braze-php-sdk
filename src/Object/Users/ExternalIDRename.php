@@ -7,11 +7,9 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class ExternalIDRename extends BaseObject
 {
-    /** @var ?string */
-    public $current_external_id;
+    public ?string $current_external_id = null;
 
-    /** @var ?string */
-    public $new_external_id;
+    public ?string $new_external_id = null;
 
     public function validate(bool $strict): void
     {

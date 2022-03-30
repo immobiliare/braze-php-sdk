@@ -8,11 +8,9 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class InfoRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $content_block_id;
+    public ?string $content_block_id = null;
 
-    /** @var ?bool */
-    public $include_inclusion_data;
+    public ?bool $include_inclusion_data = null;
 
     public function validate(bool $strict): void
     {

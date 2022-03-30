@@ -7,8 +7,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class DeleteScheduleRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $schedule_id;
+    public ?string $schedule_id = null;
 
     public function validate(bool $strict): void
     {

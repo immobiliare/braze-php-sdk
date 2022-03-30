@@ -6,6 +6,5 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class IdentifyResponse extends BaseResponse
 {
-    /** @var ?int */
-    public $aliases_to_identify_processed = null;
+    public ?int $aliases_to_identify_processed = null;
 }

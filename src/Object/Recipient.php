@@ -9,39 +9,33 @@ use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
  */
 class Recipient extends BaseObject
 {
-    /** @var ?UserAlias */
-    public $user_alias;
+    public ?UserAlias $user_alias = null;
 
-    /** @var ?string */
-    public $external_user_id;
+    public ?string $external_user_id = null;
 
     /**
      * Only for campaigns and messages
      *
-     * @var ?array
      */
-    public $trigger_properties;
+    public ?array $trigger_properties = null;
 
     /**
      * Only for canvas
      *
-     * @var ?array
      */
-    public $canvas_entry_properties;
+    public ?array $canvas_entry_properties = null;
 
     /**
      * Not included in documentation. Maybe available only on /campaigns/trigger/send endpoint
      *
-     * @var ?bool
      */
-    public $send_to_existing_only;
+    public ?bool $send_to_existing_only = null;
 
     /**
      * Not included in documentation. Maybe available only on /campaigns/trigger/send endpoint
      *
-     * @var ?array
      */
-    public $attributes;
+    public ?array $attributes = null;
 
     public function validate(bool $strict): void
     {

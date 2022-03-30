@@ -18,11 +18,9 @@ use PHPUnit\Framework\TestCase;
 
 class EndpointTest extends TestCase
 {
-    /** @var ClientAdapterInterface|MockObject */
-    protected $clientAdapter;
+    protected ClientAdapterInterface|MockObject $clientAdapter;
 
-    /** @var Braze|MockObject */
-    protected $braze;
+    protected Braze|MockObject $braze;
 
     public function setUp(): void
     {

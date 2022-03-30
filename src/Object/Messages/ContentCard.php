@@ -8,53 +8,37 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ContentCard extends BaseRequest
 {
-    /** @var ?string */
-    public $type;
+    public ?string $type = null;
 
-    /** @var ?string */
-    public $title;
+    public ?string $title = null;
 
-    /** @var ?string */
-    public $description;
+    public ?string $description = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?bool */
-    public $pinned;
+    public ?bool $pinned = null;
 
-    /** @var ?string */
-    public $image_url;
+    public ?string $image_url = null;
 
-    /** @var ?int */
-    public $time_to_live;
+    public ?int $time_to_live = null;
 
-    /** @var ?DateTimeInterface */
-    public $expiry_at;
+    public ?DateTimeInterface $expiry_at = null;
 
-    /** @var ?bool */
-    public $expire_in_local_time;
+    public ?bool $expire_in_local_time = null;
 
-    /** @var ?string */
-    public $ios_uri;
+    public ?string $ios_uri = null;
 
-    /** @var ?string */
-    public $android_uri;
+    public ?string $android_uri = null;
 
-    /** @var ?string */
-    public $web_uri;
+    public ?string $web_uri = null;
 
-    /** @var ?bool */
-    public $ios_use_webview;
+    public ?bool $ios_use_webview = null;
 
-    /** @var ?bool */
-    public $android_use_webview;
+    public ?bool $android_use_webview = null;
 
-    /** @var ?string */
-    public $uri_text;
+    public ?string $uri_text = null;
 
-    /** @var ?array */
-    public $extra;
+    public ?array $extra = null;
 
     public function validate(bool $strict): void
     {
