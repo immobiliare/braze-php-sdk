@@ -4,6 +4,8 @@ namespace ImmobiliareLabs\BrazeSDK\Test\Object\Messages;
 
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Object\Messages\AndroidConversationPush;
+use ImmobiliareLabs\BrazeSDK\Object\Messages\AndroidConversationPushMessage;
+use ImmobiliareLabs\BrazeSDK\Object\Messages\AndroidConversationPushPerson;
 use PHPUnit\Framework\TestCase;
 
 class AndroidConversationPushTest extends TestCase
@@ -71,8 +73,8 @@ class AndroidConversationPushTest extends TestCase
 
         $androidConversationPush1->shortcut_id = 'shortcut_id';
         $androidConversationPush1->reply_person_id = 'reply_person_id';
-        $androidConversationPush1->messages = 'messages';
-        $androidConversationPush1->persons = 'persons';
+        $androidConversationPush1->messages = [new AndroidConversationPushMessage()];
+        $androidConversationPush1->persons = [new AndroidConversationPushPerson()];
 
         return [
             [$androidConversationPush1]

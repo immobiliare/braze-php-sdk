@@ -4,7 +4,6 @@ namespace ImmobiliareLabs\BrazeSDK\Object;
 
 use DateTimeInterface;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
-use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class Schedule extends BaseObject
 {

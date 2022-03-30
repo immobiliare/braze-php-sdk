@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Test\Request\Canvas;
 
+use DateTimeImmutable;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Request\Canvas\AnalyticsRequest;
 use PHPUnit\Framework\TestCase;
@@ -58,8 +59,8 @@ class AnalyticsRequestTest extends TestCase
         $analyticsRequest1 = new AnalyticsRequest();
 
         $analyticsRequest1->canvas_id = 'canvas_id';
-        $analyticsRequest1->ending_at = 'ending_at';
-        $analyticsRequest1->length = 'length';
+        $analyticsRequest1->ending_at = new DateTimeImmutable();
+        $analyticsRequest1->length = 1;
 
         return [
             [$analyticsRequest1]

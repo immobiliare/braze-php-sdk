@@ -58,7 +58,7 @@ class AndroidConversationPushMessageTest extends TestCase
         $androidConversationPushMessage1 = new AndroidConversationPushMessage();
 
         $androidConversationPushMessage1->text = 'text';
-        $androidConversationPushMessage1->timestamp = 'timestamp';
+        $androidConversationPushMessage1->timestamp = time();
         $androidConversationPushMessage1->person_id = 'person_id';
 
         return [

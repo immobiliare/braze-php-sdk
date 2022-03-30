@@ -33,7 +33,7 @@ class DailyActiveUsersRequestTest extends TestCase
     {
         $dailyActiveUsersRequest1 = new DailyActiveUsersRequest();
 
-        $dailyActiveUsersRequest1->length = 'length';
+        $dailyActiveUsersRequest1->length = 1;
 
         return [
             [$dailyActiveUsersRequest1]

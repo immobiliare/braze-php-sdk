@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Test\Request\Messages;
 
+use DateTimeImmutable;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Request\Messages\ScheduledBroadcastsRequest;
 use PHPUnit\Framework\TestCase;
@@ -33,7 +34,7 @@ class ScheduledBroadcastsRequestTest extends TestCase
     {
         $scheduledBroadcastsRequest1 = new ScheduledBroadcastsRequest();
 
-        $scheduledBroadcastsRequest1->end_time = 'end_time';
+        $scheduledBroadcastsRequest1->end_time = new DateTimeImmutable();
 
         return [
             [$scheduledBroadcastsRequest1]

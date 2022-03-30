@@ -22,10 +22,10 @@ class CreateResponse extends BaseResponse
      */
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {
-        parent::fillFromArray($params, $allowExtraProperties);
-
         if (isset($params['created_at']) && is_string($params['created_at'])) {
             $this->created_at = new DateTimeImmutable($params['created_at']);
         }
+
+        parent::fillFromArray($params, $allowExtraProperties);
     }
 }

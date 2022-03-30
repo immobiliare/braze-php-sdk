@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Test\Request\Campaigns;
 
+use DateTimeImmutable;
 use ImmobiliareLabs\BrazeSDK\Request\Campaigns\ListRequest;
 use PHPUnit\Framework\TestCase;
 
@@ -19,7 +20,7 @@ class ListRequestTest extends TestCase
     public function testJsonSerialize(): void
     {
         $listRequest = new ListRequest();
-        $listRequest->last_edit_time_gt = true;
+        $listRequest->last_edit_time_gt = new DateTimeImmutable();
 
         $serialized = $listRequest->jsonSerialize();
 

@@ -40,6 +40,10 @@ abstract class BaseObject implements \JsonSerializable, ValidationInterface
                 continue;
             }
 
+            if (null !== $this->$paramKey) {
+                continue;
+            }
+
             if (is_scalar($paramValue)) {
                 $this->$paramKey = $paramValue;
             }

@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Test\Request\Canvas;
 
+use DateTimeImmutable;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Request\Canvas\SummaryRequest;
 use PHPUnit\Framework\TestCase;
@@ -58,8 +59,8 @@ class SummaryRequestTest extends TestCase
         $summaryRequest1 = new SummaryRequest();
 
         $summaryRequest1->canvas_id = 'canvas_id';
-        $summaryRequest1->ending_at = 'ending_at';
-        $summaryRequest1->length = 'length';
+        $summaryRequest1->ending_at = new DateTimeImmutable();
+        $summaryRequest1->length = 1;
 
         return [
             [$summaryRequest1]

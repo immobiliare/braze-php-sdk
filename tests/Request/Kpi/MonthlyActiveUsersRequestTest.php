@@ -33,7 +33,7 @@ class MonthlyActiveUsersRequestTest extends TestCase
     {
         $monthlyActiveUsersRequest1 = new MonthlyActiveUsersRequest();
 
-        $monthlyActiveUsersRequest1->length = 'length';
+        $monthlyActiveUsersRequest1->length = 1;
 
         return [
             [$monthlyActiveUsersRequest1]
