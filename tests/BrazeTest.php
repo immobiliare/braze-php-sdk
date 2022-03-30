@@ -10,7 +10,7 @@ use Symfony\Component\HttpClient\HttpClient;
 
 class BrazeTest extends TestCase
 {
-    private $instance;
+    private ?Braze $instance;
 
     public function setUp(): void
     {

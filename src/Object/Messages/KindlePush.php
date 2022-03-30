@@ -7,29 +7,21 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class KindlePush extends BaseRequest
 {
-    /** @var ?string */
-    public $alert;
+    public ?string $alert = null;
 
-    /** @var ?string */
-    public $title;
+    public ?string $title = null;
 
-    /** @var ?array */
-    public $extra;
+    public ?array $extra = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?int */
-    public $priority;
+    public ?int $priority = null;
 
-    /** @var ?string */
-    public $collapse_key;
+    public ?string $collapse_key = null;
 
-    /** @var ?string */
-    public $sound;
+    public ?string $sound = null;
 
-    /** @var ?string */
-    public $custom_uri;
+    public ?string $custom_uri = null;
 
     public function validate(bool $strict): void
     {

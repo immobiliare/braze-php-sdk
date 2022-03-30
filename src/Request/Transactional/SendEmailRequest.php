@@ -8,17 +8,14 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class SendEmailRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $campaign_id;
+    public ?string $campaign_id = null;
 
-    /** @var ?string */
-    public $external_send_id;
+    public ?string $external_send_id = null;
 
-    /** @var ?array */
-    public $trigger_properties;
+    public ?array $trigger_properties = null;
 
     /** @var ?Recipient[] */
-    public $recipients;
+    public ?array $recipients = null;
 
     public function validate(bool $strict): void
     {

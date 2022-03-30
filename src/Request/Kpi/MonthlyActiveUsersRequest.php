@@ -7,14 +7,11 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class MonthlyActiveUsersRequest extends BaseRequest
 {
-    /** @var ?int */
-    public $length;
+    public ?int $length = null;
 
-    /** @var ?DateTimeInterface */
-    public $ending_at;
+    public ?DateTimeInterface $ending_at = null;
 
-    /** @var ?string */
-    public $app_id;
+    public ?string $app_id = null;
 
     public function validate(bool $strict): void
     {

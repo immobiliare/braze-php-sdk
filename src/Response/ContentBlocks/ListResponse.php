@@ -7,11 +7,10 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class ListResponse extends BaseResponse
 {
-    /** @var ?int */
-    public $count;
+    public ?int $count = null;
 
     /** @var ?ListItem[] */
-    public $content_blocks;
+    public ?array $content_blocks = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

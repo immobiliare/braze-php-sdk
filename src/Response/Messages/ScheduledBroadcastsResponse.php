@@ -6,6 +6,5 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class ScheduledBroadcastsResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $scheduled_broadcasts;
+    public ?array $scheduled_broadcasts = null;
 }

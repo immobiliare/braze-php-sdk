@@ -9,7 +9,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class RenameExternalIDRequest extends BaseRequest
 {
     /** @var ?ExternalIDRename[] */
-    public $external_id_renames;
+    public ?array $external_id_renames = null;
 
     public function validate(bool $strict): void
     {

@@ -6,11 +6,9 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class RemoveExternalIDResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $removed_ids = null;
+    public ?array $removed_ids = null;
 
-    /** @var ?array */
-    public $removal_errors = null;
+    public ?array $removal_errors = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

@@ -7,23 +7,17 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class WindowsPhone8Push extends BaseRequest
 {
-    /** @var ?string */
-    public $push_type;
+    public ?string $push_type = null;
 
-    /** @var ?string */
-    public $toast_title;
+    public ?string $toast_title = null;
 
-    /** @var ?string */
-    public $toast_content;
+    public ?string $toast_content = null;
 
-    /** @var ?string */
-    public $toast_navigation_uri;
+    public ?string $toast_navigation_uri = null;
 
-    /** @var ?array */
-    public $toast_hash;
+    public ?array $toast_hash = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
     public function validate(bool $strict): void
     {

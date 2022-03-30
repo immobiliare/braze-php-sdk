@@ -7,17 +7,15 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class ListUserGroupsRequest extends BaseRequest
 {
     /** @var ?string|string[] */
-    public $external_id;
+    public string|array|null $external_id = null;
 
     /** @var ?string|string[] */
-    public $email;
+    public string|array|null $email = null;
 
     /** @var ?string|string[] */
-    public $phone;
+    public string|array|null $phone = null;
 
-    /** @var ?int */
-    public $limit;
+    public ?int $limit = null;
 
-    /** @var ?int */
-    public $offset;
+    public ?int $offset = null;
 }

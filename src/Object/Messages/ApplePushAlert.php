@@ -6,24 +6,19 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ApplePushAlert extends BaseRequest
 {
-    /** @var ?string */
-    public $body;
+    public ?string $body = null;
 
-    /** @var ?string */
-    public $title;
+    public ?string $title = null;
 
-    /** @var ?string */
-    public $title_loc_key;
+    public ?string $title_loc_key = null;
 
     /** @var ?string[] */
-    public $title_loc_args;
+    public ?array $title_loc_args = null;
 
-    /** @var ?string */
-    public $action_loc_key;
+    public ?string $action_loc_key = null;
 
-    /** @var ?string */
-    public $loc_key;
+    public ?string $loc_key = null;
 
     /** @var ?string[] */
-    public $loc_args;
+    public ?array $loc_args = null;
 }

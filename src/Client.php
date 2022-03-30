@@ -9,11 +9,9 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class Client
 {
-    /** @var ClientAdapterInterface */
-    private $adapter;
+    private ClientAdapterInterface $adapter;
 
-    /** @var array */
-    private $responsesToResolve = [];
+    private array $responsesToResolve = [];
 
     public function __construct(ClientAdapterInterface $adapter, string $apiKey, Region $instance)
     {

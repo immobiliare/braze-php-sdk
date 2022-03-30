@@ -7,14 +7,11 @@ use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 
 class Schedule extends BaseObject
 {
-    /** @var ?DateTimeInterface */
-    public $time;
+    public ?DateTimeInterface $time = null;
 
-    /** @var bool */
-    public $in_local_time;
+    public ?bool $in_local_time = null;
 
-    /** @var bool */
-    public $at_optimal_time;
+    public ?bool $at_optimal_time = null;
 
     public function validate(bool $strict): void
     {

@@ -13,14 +13,11 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class SymfonyAdapter implements ClientAdapterInterface
 {
-    /** @var HttpClientInterface */
-    private $client;
+    private HttpClientInterface $client;
 
-    /** @var array */
-    private $headers = [];
+    private array $headers = [];
 
-    /** @var ?string */
-    private $baseURI;
+    private ?string $baseURI = null;
 
     public function __construct(HttpClientInterface $client)
     {

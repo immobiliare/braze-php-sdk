@@ -8,11 +8,11 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class DeleteRequest extends BaseRequest
 {
     /** @var ?string[] */
-    public $external_ids;
+    public ?array $external_ids = null;
 
     /** @var ?UserAlias[] */
-    public $user_aliases;
+    public ?array $user_aliases = null;
 
     /** @var ?string[] */
-    public $braze_ids;
+    public ?array $braze_ids = null;
 }

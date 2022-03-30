@@ -8,29 +8,21 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class ListItem extends BaseObject
 {
-    /** @var ?string */
-    public $content_block_id;
+    public ?string $content_block_id = null;
 
-    /** @var ?string */
-    public $name;
+    public ?string $name = null;
 
-    /** @var ?string */
-    public $content_type;
+    public ?string $content_type = null;
 
-    /** @var ?string */
-    public $liquid_tag;
+    public ?string $liquid_tag = null;
 
-    /** @var ?int */
-    public $inclusion_count;
+    public ?int $inclusion_count = null;
 
-    /** @var ?DateTimeImmutable */
-    public $created_at;
+    public ?DateTimeImmutable $created_at = null;
 
-    /** @var ?DateTimeImmutable */
-    public $last_edited;
+    public ?DateTimeImmutable $last_edited = null;
 
-    /** @var ?array */
-    public $tags;
+    public ?array $tags = null;
 
     /**
      * @throws Exception

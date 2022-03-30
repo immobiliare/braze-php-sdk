@@ -7,11 +7,9 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class AndroidConversationPushPerson extends BaseRequest
 {
-    /** @var ?string */
-    public $id;
+    public ?string $id = null;
 
-    /** @var ?string */
-    public $name;
+    public ?string $name = null;
 
     public function validate(bool $strict): void
     {

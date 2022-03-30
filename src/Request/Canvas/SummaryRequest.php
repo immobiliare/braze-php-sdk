@@ -8,26 +8,19 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class SummaryRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $canvas_id;
+    public ?string $canvas_id = null;
 
-    /** @var ?DateTimeInterface */
-    public $ending_at;
+    public ?DateTimeInterface $ending_at = null;
 
-    /** @var ?DateTimeInterface */
-    public $starting_at;
+    public ?DateTimeInterface $starting_at = null;
 
-    /** @var ?int */
-    public $length;
+    public ?int $length = null;
 
-    /** @var ?bool */
-    public $include_variant_breakdown;
+    public ?bool $include_variant_breakdown = null;
 
-    /** @var ?bool */
-    public $include_step_breakdown;
+    public ?bool $include_step_breakdown = null;
 
-    /** @var ?bool */
-    public $include_deleted_step_data;
+    public ?bool $include_deleted_step_data = null;
 
     public function validate(bool $strict): void
     {

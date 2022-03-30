@@ -6,8 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class QueryHardBouncedResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $emails;
+    public ?array $emails = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

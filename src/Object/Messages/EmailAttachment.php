@@ -7,11 +7,9 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class EmailAttachment extends BaseObject
 {
-    /** @var ?string */
-    public $file_name;
+    public ?string $file_name = null;
 
-    /** @var ?string */
-    public $url;
+    public ?string $url = null;
 
     public function validate(bool $strict): void
     {

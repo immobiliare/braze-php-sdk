@@ -9,23 +9,18 @@ use ImmobiliareLabs\BrazeSDK\Request\HasRecipients;
 
 class TriggerSendRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $campaign_id;
+    public ?string $campaign_id = null;
 
-    /** @var ?string */
-    public $send_id;
+    public ?string $send_id = null;
 
-    /** @var ?array */
-    public $trigger_properties;
+    public ?array $trigger_properties = null;
 
-    /** @var bool */
-    public $broadcast = false;
+    public bool $broadcast = false;
 
-    /** @var ?array */
-    public $audience;
+    public ?array $audience = null;
 
     /** @var ?Recipient[] */
-    public $recipients;
+    public ?array $recipients = null;
 
     public function validate(bool $strict): void
     {

@@ -7,14 +7,12 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ExportByGlobalControlGroupRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $callback_endpoint;
+    public ?string $callback_endpoint = null;
 
     /** @var ?string[] */
-    public $fields_to_export;
+    public ?array $fields_to_export = null;
 
-    /** @var ?string */
-    public $output_format;
+    public ?string $output_format = null;
 
     public function validate(bool $strict): void
     {

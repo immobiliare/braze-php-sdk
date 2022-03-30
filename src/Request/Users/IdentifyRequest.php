@@ -9,7 +9,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class IdentifyRequest extends BaseRequest
 {
     /** @var ?AliasToIdentify[] */
-    public $aliases_to_identify;
+    public ?array $aliases_to_identify = null;
 
     public function validate(bool $strict): void
     {

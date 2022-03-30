@@ -6,12 +6,9 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class TrackResponse extends BaseResponse
 {
-    /** @var ?int */
-    public $attributes_processed = null;
+    public ?int $attributes_processed = null;
 
-    /** @var ?int */
-    public $events_processed = null;
+    public ?int $events_processed = null;
 
-    /** @var ?int */
-    public $purchases_processed = null;
+    public ?int $purchases_processed = null;
 }

@@ -7,14 +7,11 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class AndroidConversationPushMessage extends BaseRequest
 {
-    /** @var ?string */
-    public $text;
+    public ?string $text = null;
 
-    /** @var ?int */
-    public $timestamp;
+    public ?int $timestamp = null;
 
-    /** @var ?string */
-    public $person_id;
+    public ?string $person_id = null;
 
     public function validate(bool $strict): void
     {

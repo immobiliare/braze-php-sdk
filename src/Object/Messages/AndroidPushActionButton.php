@@ -7,17 +7,13 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class AndroidPushActionButton extends BaseRequest
 {
-    /** @var ?string */
-    public $text;
+    public ?string $text = null;
 
-    /** @var ?string */
-    public $action;
+    public ?string $action = null;
 
-    /** @var ?string */
-    public $uri;
+    public ?string $uri = null;
 
-    /** @var ?bool */
-    public $use_webview;
+    public ?bool $use_webview = null;
 
     public function validate(bool $strict): void
     {

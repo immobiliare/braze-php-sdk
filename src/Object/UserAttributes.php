@@ -11,88 +11,61 @@ use ImmobiliareLabs\BrazeSDK\Object\ValueObject\Location;
  */
 class UserAttributes extends BaseObject
 {
-    /** @var ?string */
-    public $external_id;
+    public ?string $external_id = null;
 
-    /** @var ?UserAlias */
-    public $user_alias;
+    public ?UserAlias $user_alias = null;
 
-    /** @var ?string */
-    public $braze_id;
+    public ?string $braze_id = null;
 
-    /** @var ?bool */
-    public $_update_existing_only;
+    public ?bool $_update_existing_only = null;
 
-    /** @var ?bool */
-    public $push_token_import;
+    public ?bool $push_token_import = null;
 
     // Braze user profile fields
 
-    /** @var ?string */
-    public $country;
+    public ?string $country = null;
 
-    /** @var ?Location */
-    public $current_location;
+    public ?Location $current_location = null;
 
-    /** @var ?DateTimeInterface */
-    public $date_of_first_session;
+    public ?DateTimeInterface $date_of_first_session = null;
 
-    /** @var ?DateTimeInterface */
-    public $date_of_last_session;
+    public ?DateTimeInterface $date_of_last_session = null;
 
-    /** @var ?DateTimeInterface */
-    public $dob;
+    public ?DateTimeInterface $dob = null;
 
-    /** @var ?string */
-    public $email;
+    public ?string $email = null;
 
-    /** @var ?string */
-    public $email_subscribe;
+    public ?string $email_subscribe = null;
 
-    /** @var ?bool */
-    public $email_open_tracking_disabled;
+    public ?bool $email_open_tracking_disabled = null;
 
-    /** @var ?bool */
-    public $email_click_tracking_disabled;
+    public ?bool $email_click_tracking_disabled = null;
 
-    /** @var ?string */
-    public $facebook;
+    public ?string $facebook = null;
 
-    /** @var ?string */
-    public $first_name;
+    public ?string $first_name = null;
 
-    /** @var ?string */
-    public $gender;
+    public ?string $gender = null;
 
-    /** @var ?string */
-    public $home_city;
+    public ?string $home_city = null;
 
-    /** @var ?string */
-    public $image_url;
+    public ?string $image_url = null;
 
-    /** @var ?string */
-    public $language;
+    public ?string $language = null;
 
-    /** @var ?string */
-    public $last_name;
+    public ?string $last_name = null;
 
-    /** @var ?DateTimeInterface */
-    public $marked_email_as_spam_at;
+    public ?DateTimeInterface $marked_email_as_spam_at = null;
 
-    /** @var ?string */
-    public $phone;
+    public ?string $phone = null;
 
-    /** @var ?string */
-    public $push_subscribe;
+    public ?string $push_subscribe = null;
 
-    /** @var ?array */
-    public $push_tokens;
+    public ?array $push_tokens = null;
 
-    /** @var ?string */
-    public $time_zone;
+    public ?string $time_zone = null;
 
-    /** @var ?string */
-    public $twitter;
+    public ?string $twitter = null;
 
     public function validate(bool $strict): void
     {

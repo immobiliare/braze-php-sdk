@@ -7,14 +7,11 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class NewUserAlias extends BaseObject
 {
-    /** @var ?string */
-    public $external_id;
+    public ?string $external_id = null;
 
-    /** @var ?string */
-    public $alias_name;
+    public ?string $alias_name = null;
 
-    /** @var ?string */
-    public $alias_label;
+    public ?string $alias_label = null;
 
     public function validate(bool $strict): void
     {

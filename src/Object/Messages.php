@@ -15,33 +15,23 @@ use ImmobiliareLabs\BrazeSDK\Object\Messages\WindowsUniversalPush;
 
 class Messages extends BaseObject
 {
-    /** @var ?ApplePush */
-    public $apple_push;
+    public ?ApplePush $apple_push = null;
 
-    /** @var ?AndroidPush */
-    public $android_push;
+    public ?AndroidPush $android_push = null;
 
-    /** @var ?WindowsPhone8Push */
-    public $windows_phone8_push;
+    public ?WindowsPhone8Push $windows_phone8_push = null;
 
-    /** @var ?WindowsUniversalPush */
-    public $windows_universal_push;
+    public ?WindowsUniversalPush $windows_universal_push = null;
 
-    /** @var ?KindlePush */
-    public $kindle_push;
+    public ?KindlePush $kindle_push = null;
 
-    /** @var ?WebPush */
-    public $web_push;
+    public ?WebPush $web_push = null;
 
-    /** @var ?Email */
-    public $email;
+    public ?Email $email = null;
 
-    /** @var ?Webhook */
-    public $webhook;
+    public ?Webhook $webhook = null;
 
-    /** @var ?ContentCard */
-    public $content_card;
+    public ?ContentCard $content_card = null;
 
-    /** @var ?SMS */
-    public $sms;
+    public ?SMS $sms = null;
 }

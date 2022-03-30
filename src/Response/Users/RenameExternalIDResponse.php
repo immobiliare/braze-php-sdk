@@ -6,11 +6,9 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class RenameExternalIDResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $external_ids = null;
+    public ?array $external_ids = null;
 
-    /** @var ?array */
-    public $rename_errors = null;
+    public ?array $rename_errors = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

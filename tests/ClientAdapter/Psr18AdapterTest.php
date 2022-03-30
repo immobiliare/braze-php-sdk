@@ -19,17 +19,13 @@ use Psr\Http\Message\UriInterface;
 
 class Psr18AdapterTest extends TestCase
 {
-    /** @var ClientInterface|MockObject */
-    private $httpClientMock;
+    private ClientInterface|MockObject $httpClientMock;
 
-    /** @var UriFactoryInterface|MockObject */
-    private $uriFactoryMock;
+    private UriFactoryInterface|MockObject $uriFactoryMock;
 
-    /** @var RequestFactoryInterface|MockObject */
-    private $requestFactoryMock;
+    private RequestFactoryInterface|MockObject $requestFactoryMock;
 
-    /** @var Psr18Adapter|MockObject */
-    private $psr18Adapter;
+    private Psr18Adapter|MockObject $psr18Adapter;
 
     public function setUp(): void
     {

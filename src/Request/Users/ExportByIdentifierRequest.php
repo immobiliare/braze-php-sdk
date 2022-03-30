@@ -8,23 +8,19 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class ExportByIdentifierRequest extends BaseRequest
 {
     /** @var ?string[] */
-    public $external_ids;
+    public ?array $external_ids = null;
 
     /** @var ?UserAlias[] */
-    public $user_aliases;
+    public ?array $user_aliases = null;
 
-    /** @var ?string */
-    public $device_id;
+    public ?string $device_id = null;
 
-    /** @var ?string */
-    public $braze_id;
+    public ?string $braze_id = null;
 
-    /** @var ?string */
-    public $email_address;
+    public ?string $email_address = null;
 
-    /** @var ?string */
-    public $phone;
+    public ?string $phone = null;
 
     /** @var ?string[] */
-    public $fields_to_export;
+    public ?array $fields_to_export = null;
 }

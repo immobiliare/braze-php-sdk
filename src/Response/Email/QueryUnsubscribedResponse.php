@@ -6,8 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class QueryUnsubscribedResponse extends BaseResponse
 {
-    /** @var ?array */
-    public $emails;
+    public ?array $emails = null;
 
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {

@@ -8,5 +8,5 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 class ListResponse extends BaseResponse
 {
     /** @var ?ListItem[] */
-    public $canvases;
+    public ?array $canvases = null;
 }

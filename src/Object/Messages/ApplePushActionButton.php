@@ -7,17 +7,13 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ApplePushActionButton extends BaseRequest
 {
-    /** @var ?string */
-    public $action_id;
+    public ?string $action_id = null;
 
-    /** @var ?string */
-    public $action;
+    public ?string $action = null;
 
-    /** @var ?string */
-    public $uri;
+    public ?string $uri = null;
 
-    /** @var ?bool */
-    public $use_webview;
+    public ?bool $use_webview = null;
 
     public function validate(bool $strict): void
     {

@@ -6,9 +6,7 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class TriggerSendResponse extends BaseResponse
 {
-    /** @var ?string */
-    public $dispatch_id;
+    public ?string $dispatch_id = null;
 
-    /** @var ?string */
-    public $notice;
+    public ?string $notice = null;
 }

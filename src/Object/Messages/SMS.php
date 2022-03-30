@@ -7,20 +7,15 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class SMS extends BaseRequest
 {
-    /** @var ?string */
-    public $subscription_group_id;
+    public ?string $subscription_group_id = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?string */
-    public $body;
+    public ?string $body = null;
 
-    /** @var ?string */
-    public $app_id;
+    public ?string $app_id = null;
 
-    /** @var ?array */
-    public $media_items;
+    public ?array $media_items = null;
 
     public function validate(bool $strict): void
     {

@@ -8,8 +8,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class InfoRequest extends BaseRequest
 {
-    /** @var ?string */
-    public $email_template_id;
+    public ?string $email_template_id = null;
 
     public function validate(bool $strict): void
     {

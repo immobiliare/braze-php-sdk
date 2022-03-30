@@ -9,7 +9,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class CreateAliasRequest extends BaseRequest
 {
     /** @var ?NewUserAlias[] */
-    public $user_aliases;
+    public ?array $user_aliases = null;
 
     public function validate(bool $strict): void
     {

@@ -6,6 +6,5 @@ use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
 class DeleteResponse extends BaseResponse
 {
-    /** @var ?int */
-    public $deleted = null;
+    public ?int $deleted = null;
 }

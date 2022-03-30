@@ -7,59 +7,43 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class ApplePush extends BaseRequest
 {
-    /** @var ?int */
-    public $badge;
+    public ?int $badge = null;
 
     /** @var ?string|ApplePushAlert */
-    public $alert;
+    public string|null|ApplePushAlert $alert = null;
 
-    /** @var ?string */
-    public $sound;
+    public ?string $sound = null;
 
-    /** @var ?array */
-    public $extra;
+    public ?array $extra = null;
 
-    /** @var ?bool */
-    public $content_available;
+    public ?bool $content_available = null;
 
-    /** @var ?string */
-    public $interruption_level;
+    public ?string $interruption_level = null;
 
-    /** @var ?float */
-    public $relevance_score;
+    public ?float $relevance_score = null;
 
-    /** @var ?DateTimeInterface */
-    public $expiry;
+    public ?DateTimeInterface $expiry = null;
 
-    /** @var ?string */
-    public $custom_uri;
+    public ?string $custom_uri = null;
 
-    /** @var ?string */
-    public $message_variation_id;
+    public ?string $message_variation_id = null;
 
-    /** @var ?string */
-    public $notification_group_thread_id;
+    public ?string $notification_group_thread_id = null;
 
-    /** @var ?string */
-    public $asset_url;
+    public ?string $asset_url = null;
 
-    /** @var ?string */
-    public $asset_file_type;
+    public ?string $asset_file_type = null;
 
-    /** @var ?string */
-    public $collapse_id;
+    public ?string $collapse_id = null;
 
-    /** @var ?bool */
-    public $mutable_content;
+    public ?bool $mutable_content = null;
 
-    /** @var ?bool */
-    public $send_to_most_recent_device_only;
+    public ?bool $send_to_most_recent_device_only = null;
 
-    /** @var ?string */
-    public $category;
+    public ?string $category = null;
 
     /** @var ?ApplePushActionButton[] */
-    public $buttons;
+    public ?array $buttons = null;
 
     public function jsonSerialize(): mixed
     {
