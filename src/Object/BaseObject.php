@@ -2,11 +2,12 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Object;
 
+use ImmobiliareLabs\BrazeSDK\JsonSerializable;
 use ImmobiliareLabs\BrazeSDK\ValidationInterface;
 
-abstract class BaseObject implements \JsonSerializable, ValidationInterface
+abstract class BaseObject implements JsonSerializable, ValidationInterface
 {
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         $dataToSerialize = array_filter(get_object_vars($this), function ($val) {
             return null !== $val;

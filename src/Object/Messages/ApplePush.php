@@ -10,7 +10,7 @@ class ApplePush extends BaseRequest
     public ?int $badge = null;
 
     /** @var ?string|ApplePushAlert */
-    public string|null|ApplePushAlert $alert = null;
+    public $alert = null;
 
     public ?string $sound = null;
 
@@ -45,7 +45,7 @@ class ApplePush extends BaseRequest
     /** @var ?ApplePushActionButton[] */
     public ?array $buttons = null;
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         $dataToSerialize = parent::jsonSerialize();
 

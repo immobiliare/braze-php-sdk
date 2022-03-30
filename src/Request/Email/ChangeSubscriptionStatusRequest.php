@@ -8,7 +8,7 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 class ChangeSubscriptionStatusRequest extends BaseRequest
 {
     /** @var ?string|?array */
-    public string|array|null $email = null;
+    public $email = null;
 
     public ?string $subscription_state = null;
 

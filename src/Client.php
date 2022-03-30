@@ -41,7 +41,7 @@ class Client
 
             $body = null;
         } else {
-            $body = json_encode($request);
+            $body = json_encode($request->jsonSerialize());
         }
 
         return $this->adapter->makeRequest($method, $path, $body);

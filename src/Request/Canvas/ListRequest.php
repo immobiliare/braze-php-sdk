@@ -15,7 +15,7 @@ class ListRequest extends BaseRequest
 
     public ?DateTimeInterface $last_edit_time_gt = null;
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         $dataToSerialize = parent::jsonSerialize();
 

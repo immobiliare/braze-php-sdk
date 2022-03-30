@@ -10,13 +10,13 @@ class GetStatusRequest extends BaseRequest
     public ?string $subscription_group_id = null;
 
     /** @var ?string|string[] */
-    public string|array|null $external_id = null;
+    public $external_id = null;
 
     /** @var ?string|string[] */
-    public string|array|null $email = null;
+    public $email = null;
 
     /** @var ?string|string[] */
-    public string|array|null $phone = null;
+    public $phone = null;
 
     public function validate(bool $strict): void
     {

@@ -76,7 +76,7 @@ class UserAttributes extends BaseObject
         }
     }
 
-    public function jsonSerialize(): mixed
+    public function jsonSerialize(): array
     {
         $dataToSerialize = parent::jsonSerialize();
 

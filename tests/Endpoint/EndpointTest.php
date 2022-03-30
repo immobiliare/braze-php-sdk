@@ -11,16 +11,17 @@ use ImmobiliareLabs\BrazeSDK\Exception\NotValidResponseException;
 use ImmobiliareLabs\BrazeSDK\Region;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Feed\ListRequest;
-use ImmobiliareLabs\BrazeSDK\Request\Sessions\AnalyticsRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\TrackRequest;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class EndpointTest extends TestCase
 {
-    protected ClientAdapterInterface|MockObject $clientAdapter;
+    /** @var ClientAdapterInterface|MockObject  */
+    protected $clientAdapter;
 
-    protected Braze|MockObject $braze;
+    /** @var Braze|MockObject  */
+    protected $braze;
 
     public function setUp(): void
     {
