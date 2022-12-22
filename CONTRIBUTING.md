@@ -36,7 +36,7 @@ docker-compose run php-80 composer install
 or for enter in the container
 
 ```console
-docker exec -it braze-php-sdk-8.0 sh
+docker-compose exec php-80 sh
 ```
 
 ## Testing
