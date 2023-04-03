@@ -3,6 +3,7 @@
 namespace ImmobiliareLabs\BrazeSDK\Test\ClientAdapter;
 
 use ImmobiliareLabs\BrazeSDK\ClientAdapter\Psr18Adapter;
+use ImmobiliareLabs\BrazeSDK\Exception\ClientException;
 use ImmobiliareLabs\BrazeSDK\Exception\NotValidBaseURIException;
 use ImmobiliareLabs\BrazeSDK\Exception\TransportException;
 use ImmobiliareLabs\BrazeSDK\Region;
@@ -105,7 +106,7 @@ class Psr18AdapterTest extends TestCase
 
     public function testMakeRequestWithClientException(): void
     {
-        $this->expectException(TransportException::class);
+        $this->expectException(ClientException::class);
 
         $exception = $this->createMock(ClientExceptionInterface::class);
 
