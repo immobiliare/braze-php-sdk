@@ -20,15 +20,16 @@ use ImmobiliareLabs\BrazeSDK\Response\Users\IdentifyResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\RemoveExternalIDResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\RenameExternalIDResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\TrackResponse;
+use ImmobiliareLabs\BrazeSDK\RetrySettings;
 
 class Users extends Endpoint
 {
     /**
      * @see https://www.braze.com/docs/api/endpoints/user_data/post_user_track/
      */
-    public function track(TrackRequest $request, bool $resolveResponse = true): TrackResponse
+    public function track(TrackRequest $request, bool $resolveResponse = true, ?RetrySettings $retrySettings = null): TrackResponse
     {
-        return $this->makeRequest('POST', '/users/track', $request, TrackResponse::class, $resolveResponse);
+        return $this->makeRequest('POST', '/users/track', $request, TrackResponse::class, $resolveResponse, $retrySettings);
     }
 
     /**
