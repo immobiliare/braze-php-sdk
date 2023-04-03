@@ -3,10 +3,12 @@
 namespace ImmobiliareLabs\BrazeSDK\ClientAdapter;
 
 use ImmobiliareLabs\BrazeSDK\ClientResolvedResponse;
+use ImmobiliareLabs\BrazeSDK\Exception\ClientException;
 use ImmobiliareLabs\BrazeSDK\Exception\NotValidBaseURIException;
 use ImmobiliareLabs\BrazeSDK\Exception\TransportException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -82,9 +84,10 @@ class Psr18Adapter implements ClientAdapterInterface
 
         try {
             return $this->client->sendRequest($request);
-        } catch (ClientExceptionInterface $e) {
-            // is this correct?
-            throw new TransportException($e->getMessage(), 0, $e);
+        } catch (NetworkExceptionInterface $networkException) {
+            throw new TransportException($networkException->getMessage(), 0, $networkException);
+        } catch (ClientExceptionInterface $clientException) {
+            throw new ClientException($clientException->getMessage(), 0, $clientException);
         }
     }
 
