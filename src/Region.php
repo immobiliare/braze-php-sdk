@@ -17,8 +17,7 @@ class Region
     public const EU01 = 'https://rest.fra-01.braze.eu';
     public const EU02 = 'https://rest.fra-02.braze.eu';
 
-    /** @var string */
-    private $restEndpoint;
+    private string $restEndpoint;
 
     public function __construct(string $restEndpoint, bool $force = false)
     {

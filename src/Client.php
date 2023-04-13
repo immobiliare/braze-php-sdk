@@ -56,7 +56,7 @@ class Client
         }
     }
 
-    private function resolveResponse($httpResponse, BaseResponse $libResponse)
+    private function resolveResponse($httpResponse, BaseResponse $libResponse): void
     {
         if (null === $httpResponse) {
             return;

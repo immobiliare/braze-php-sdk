@@ -8,11 +8,8 @@ use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 abstract class Endpoint
 {
-    /** @var Braze */
-    protected $braze;
-
-    /** @var Client  */
-    protected $client;
+    protected Braze $braze;
+    protected Client $client;
 
     public function __construct(Braze $braze)
     {
