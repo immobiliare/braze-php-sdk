@@ -11,6 +11,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -99,17 +100,32 @@ class Psr18AdapterTest extends TestCase
         $this->psr18Adapter->makeRequest('GET', '/path', '{}');
     }
 
-    public function testMakeRequestWithException(): void
+    public function testMakeRequestWithClientException(): void
     {
         $this->expectException(ClientException::class);
 
-        $clientException = $this->createMock(ClientExceptionInterface::class);
+        $exception = $this->createMock(ClientExceptionInterface::class);
 
         $this->testSetBaseUri();
 
         $this->httpClientMock->expects($this->once())
             ->method('sendRequest')
-            ->willThrowException($clientException);
+            ->willThrowException($exception);
+
+        $this->psr18Adapter->makeRequest('GET', '/path');
+    }
+
+    public function testMakeRequestWithNetworkException(): void
+    {
+        $this->expectException(TransportException::class);
+
+        $exception = $this->createMock(NetworkExceptionInterface::class);
+
+        $this->testSetBaseUri();
+
+        $this->httpClientMock->expects($this->once())
+            ->method('sendRequest')
+            ->willThrowException($exception);
 
         $this->psr18Adapter->makeRequest('GET', '/path');
     }
