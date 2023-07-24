@@ -63,6 +63,17 @@ class TrackRequestTest extends TestCase
         $trackRequest->validate(false);
     }
 
+    public function testFromArray(): void
+    {
+        $attributes = [ new UserAttributes() ];
+
+        $trackRequest = TrackRequest::fromArray([
+            'attributes' => $attributes
+        ]);
+
+        $this->assertSame($attributes, $trackRequest->attributes);
+    }
+
     public function validProvider(): array
     {
         $event1 = new Event();

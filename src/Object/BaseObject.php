@@ -44,7 +44,7 @@ abstract class BaseObject implements \JsonSerializable, ValidationInterface
                 continue;
             }
 
-            if (is_scalar($paramValue)) {
+            if ((new \ReflectionProperty(static::class, $paramKey))->getType()->getName() === gettype($paramValue)) {
                 $this->$paramKey = $paramValue;
             }
         }
