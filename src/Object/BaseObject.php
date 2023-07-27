@@ -21,12 +21,7 @@ abstract class BaseObject implements \JsonSerializable, ValidationInterface
         return $dataToSerialize;
     }
 
-    /**
-     * @todo: set return type to static when PHP 8.0 (or above) will be the minimum supported version
-     *
-     * @return static
-     */
-    public static function fromArray(array $params, bool $allowExtraProperties = false)
+    public static function fromArray(array $params, bool $allowExtraProperties = false): static
     {
         $instance = new static();
         $instance->fillFromArray($params, $allowExtraProperties);
