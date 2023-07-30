@@ -67,6 +67,8 @@ class UserAttributes extends BaseObject
 
     public ?string $twitter = null;
 
+    private array $_customAttributes = [];
+
     public function validate(bool $strict): void
     {
         parent::validate($strict);
@@ -84,6 +86,23 @@ class UserAttributes extends BaseObject
             $dataToSerialize['dob'] = $this->dob->format('Y-m-d');
         }
 
-        return $dataToSerialize;
+        return array_merge($dataToSerialize, $this->_customAttributes);
+    }
+
+    /**
+     * To set a custom DateTime attribute use a string in the ISO 8601 format.
+     * Using a DateTime object it would not be possible to know if you want
+     * to send a date that includes time or not.
+     */
+    public function setCustomAttribute(string $key, array|bool|float|int|string $value): void
+    {
+        $this->_customAttributes[$key] = $value;
+    }
+
+    public function setCustomAttributes(array $customAttributes): void
+    {
+        foreach ($customAttributes as $key => $value) {
+            $this->setCustomAttribute($key, $value);
+        }
     }
 }

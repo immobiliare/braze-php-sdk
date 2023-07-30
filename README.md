@@ -101,6 +101,30 @@ $response = $braze->users()->track($request, false);
 
 You can see a few complete [examples](./examples) in the repository.
 
+### Custom user attributes
+
+To set custom User attributes use the ```setCustomAttribute``` or ```setCustomAttributes``` methods available in the ```UserAttributes``` class.
+
+```php
+use ImmobiliareLabs\BrazeSDK\Object\UserAttributes;
+
+$userAttributes = new UserAttributes();
+$userAttributes->external_id = 'user-id';
+$userAttributes->first_name = 'Name';
+
+$userAttributes->setCustomAttribute('custom_int_property', 47);
+
+$userAttributes->setCustomAttributes([
+    'custom_string_property' => 'properyValue',
+    'custom_bool_property' => false,
+]);
+
+$request = new TrackRequest();
+$request->attributes = [$userAttributes];
+
+$response = $braze->users()->track($request, false);
+```
+
 ### Endpoints
 Endpoints are organized by url prefix. The SDK supports all the Braze endpoints:
 - users
