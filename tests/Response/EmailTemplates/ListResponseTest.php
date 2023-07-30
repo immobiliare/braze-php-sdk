@@ -2,7 +2,6 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Test\Response\EmailTemplates;
 
-use ImmobiliareLabs\BrazeSDK\Response\EmailTemplates\CreateResponse;
 use ImmobiliareLabs\BrazeSDK\Response\EmailTemplates\ListResponse;
 use PHPUnit\Framework\TestCase;
 

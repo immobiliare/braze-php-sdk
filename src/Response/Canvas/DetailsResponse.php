@@ -42,6 +42,8 @@ class DetailsResponse extends BaseResponse
 
         $this->variants = $params['variants'] ?? [];
 
+        $this->tags = $params['tags'] ?? [];
+
         $this->steps = $params['steps'] ?? [];
     }
 }

@@ -40,6 +40,8 @@ class DetailsResponse extends BaseResponse
 
         $this->channels = $params['channels'] ?? [];
 
+        $this->tags = $params['tags'] ?? [];
+
         $this->messages = $params['messages'] ?? [];
 
         $this->conversion_behaviors = $params['conversion_behaviors'] ?? [];
