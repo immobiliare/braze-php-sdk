@@ -43,6 +43,37 @@ final class UserAttributesTest extends TestCase
         $this->assertSame($userAttributes->dob->format('Y-m-d'), $serialized['dob']);
     }
 
+    public function testCustomAttribute(): void
+    {
+        $customAttributeKey = 'key';
+        $customAttributeValue = 'value';
+
+        $userAttributes = new UserAttributes();
+        $userAttributes->setCustomAttribute($customAttributeKey, $customAttributeValue);
+
+        $serialized = $userAttributes->jsonSerialize();
+
+        $this->assertSame($customAttributeValue, $serialized[$customAttributeKey]);
+        $this->assertArrayNotHasKey('_customAttributes', $serialized);
+    }
+
+    public function testCustomAttributes(): void
+    {
+        $customAttributes = [
+            'custom1' => 'value1',
+            'custom2' => 2,
+        ];
+
+        $userAttributes = new UserAttributes();
+        $userAttributes->setCustomAttributes($customAttributes);
+
+        $serialized = $userAttributes->jsonSerialize();
+
+        foreach ($customAttributes as $key => $value) {
+            $this->assertSame($value, $serialized[$key]);
+        }
+    }
+
     public function validProvider(): array
     {
         $userAttributes1 = new UserAttributes();
