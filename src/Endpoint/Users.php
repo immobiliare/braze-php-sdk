@@ -8,6 +8,7 @@ use ImmobiliareLabs\BrazeSDK\Request\Users\ExportByGlobalControlGroupRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\ExportByIdentifierRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\ExportBySegmentRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\IdentifyRequest;
+use ImmobiliareLabs\BrazeSDK\Request\Users\MergeRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\RemoveExternalIDRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\RenameExternalIDRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Users\TrackRequest;
@@ -17,6 +18,7 @@ use ImmobiliareLabs\BrazeSDK\Response\Users\ExportByGlobalControlGroupResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\ExportByIdentifierResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\ExportBySegmentResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\IdentifyResponse;
+use ImmobiliareLabs\BrazeSDK\Response\Users\MergeResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\RemoveExternalIDResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\RenameExternalIDResponse;
 use ImmobiliareLabs\BrazeSDK\Response\Users\TrackResponse;
@@ -53,6 +55,14 @@ class Users extends Endpoint
     public function delete(DeleteRequest $request, bool $resolveResponse = true): DeleteResponse
     {
         return $this->makeRequest('POST', '/users/delete', $request, DeleteResponse::class, $resolveResponse);
+    }
+
+    /**
+     * @see https://www.braze.com/docs/api/endpoints/user_data/post_users_merge/
+     */
+    public function merge(MergeRequest $request, bool $resolveResponse = true): MergeResponse
+    {
+        return $this->makeRequest('POST', '/users/merge', $request, MergeResponse::class, $resolveResponse);
     }
 
     /**
