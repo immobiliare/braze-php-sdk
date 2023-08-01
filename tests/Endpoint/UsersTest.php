@@ -21,6 +21,7 @@ class UsersTest extends EndpointTest
             ['createAlias', Users\CreateAliasRequest::class],
             ['identify', Users\IdentifyRequest::class],
             ['delete', Users\DeleteRequest::class],
+            ['merge', Users\MergeRequest::class],
             ['renameExternalID', Users\RenameExternalIDRequest::class],
             ['removeExternalID', Users\RemoveExternalIDRequest::class],
             ['exportByIdentifier', Users\ExportByIdentifierRequest::class],
