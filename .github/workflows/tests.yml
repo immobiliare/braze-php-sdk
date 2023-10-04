@@ -10,13 +10,13 @@ jobs:
 
     strategy:
       matrix:
-        php: ['8.0', '8.1']
+        php: ['8.0', '8.1', '8.2']
 
     name: PHP ${{ matrix.php }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -37,4 +37,4 @@ jobs:
         run: vendor/bin/phpunit -c phpunit.xml.dist --coverage-clover clover.xml
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
