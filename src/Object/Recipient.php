@@ -15,27 +15,26 @@ class Recipient extends BaseObject
 
     /**
      * Only for campaigns and messages
-     *
      */
     public ?array $trigger_properties = null;
 
     /**
      * Only for canvas
-     *
      */
     public ?array $canvas_entry_properties = null;
 
     /**
-     * Not included in documentation. Maybe available only on /campaigns/trigger/send endpoint
-     *
+     * Not well documented.
+     * Maybe available only on /campaigns/trigger/send and /canvas/trigger/send endpoints.
      */
     public ?bool $send_to_existing_only = null;
 
     /**
-     * Not included in documentation. Maybe available only on /campaigns/trigger/send endpoint
-     *
+     * Not well documented.
+     * Maybe available only on /campaigns/trigger/send and /canvas/trigger/send endpoints.
+     * We may remove the array type in the next major release.
      */
-    public ?array $attributes = null;
+    public array|UserAttributes|null $attributes = null;
 
     public function validate(bool $strict): void
     {
