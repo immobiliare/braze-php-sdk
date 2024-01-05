@@ -58,6 +58,10 @@ composer test-coverage-html
 composer php-cs-fixer
 ```
 
+## Commit guidelines
+
+Please see the [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## Contributors
 
 Below the list of all contributors:
