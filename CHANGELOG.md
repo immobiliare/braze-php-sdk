@@ -1,11 +1,28 @@
-# Changelog
-All notable changes to this project will be documented in this file.
+## [2.2.1] - 2023-12-19
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+### Changed
+- chore: add workflows pipeline for php 8.2 
+- fix: added type to attributes property of Recipient
 
 
-## [Unreleased]
+## [2.2.0] - 2023-08-29 
+
+### Added
+- Add support for user custom attributes
+- Add support for /users/merge endpoint
+
+### Changed
+- Fix pull request template
+- Add static as return type of BaseObject fromArray method
+- Add properties to Subscription/GetStatusResponse class
+
+## [2.1.0] - 2023-05-11 
+
+### Added
+- Add new exceptions for client and server errors
+
+### Changed
+- Modified tests data provider to match properties types
 
 ## [2.0.0] - 2022-03-28
 ### Added
@@ -13,6 +30,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Set minimum required PHP version to 8.0
+
+## [1.3.1] - 2023-08-29
+### Changed
+- Add properties to Subscription/GetStatusResponse class
+
+## [1.3.0] - 2023-05-05
+### Added
+- Add new exceptions for client and server errors
+
+### Changed
+- Modified tests data provider to match properties types
 
 ## [1.2.0] - 2022-03-28
 ### Added
