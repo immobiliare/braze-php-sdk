@@ -1,3 +1,15 @@
+## [2.3.0](https://github.com/immobiliare/braze-php-sdk/compare/v2.2.1...v2.3.0) (2024-01-08)
+
+
+### Features
+
+* **ci:** add create release action ([9221320](https://github.com/immobiliare/braze-php-sdk/commit/9221320f12c784a3352ffdded96fdd0e95779561))
+
+
+### Bug Fixes
+
+* **ci:** github php token to generare release ([a24c8db](https://github.com/immobiliare/braze-php-sdk/commit/a24c8db67c54d868e5ab32bdcf2304d58b80b803))
+
 ## [2.2.1] - 2023-12-19
 
 ### Changed
