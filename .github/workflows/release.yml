@@ -17,7 +17,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v5
         with:
           preset: conventionalcommits
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_PHP_TOKEN }}
           git-user-name: ${{ github.actor }}
           git-user-email: ${{ github.actor }}@users.noreply.github.com
           tag-prefix: 'v'
@@ -30,5 +30,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         with:
+          token: ${{ secrets.GH_PHP_TOKEN }}
           tag_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
