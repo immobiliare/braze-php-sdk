@@ -7,6 +7,7 @@ use ImmobiliareLabs\BrazeSDK\Exception\ClientException;
 use ImmobiliareLabs\BrazeSDK\Exception\NotValidBaseURIException;
 use ImmobiliareLabs\BrazeSDK\Exception\TransportException;
 use ImmobiliareLabs\BrazeSDK\Region;
+use Nyholm\Psr7\Stream;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientExceptionInterface;
@@ -140,7 +141,7 @@ class Psr18AdapterTest extends TestCase
 
         $httpResponseMock->expects($this->once())
             ->method('getBody')
-            ->willReturn('');
+            ->willReturn(Stream::create(''));
 
         $resolvedResponse = $this->psr18Adapter->resolveResponse($httpResponseMock);
 
