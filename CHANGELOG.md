@@ -1,3 +1,10 @@
+## [2.4.0](https://github.com/immobiliare/braze-php-sdk/compare/v2.3.0...v2.4.0) (2024-01-17)
+
+
+### Features
+
+* add support for http messages v2 ([5ae4e69](https://github.com/immobiliare/braze-php-sdk/commit/5ae4e6960df9b8aa13795ed081d0123daa070189))
+
 ## [2.3.0](https://github.com/immobiliare/braze-php-sdk/compare/v2.2.1...v2.3.0) (2024-01-08)
 
 
