@@ -94,7 +94,7 @@ class UserAttributes extends BaseObject
      * Using a DateTime object it would not be possible to know if you want
      * to send a date that includes time or not.
      */
-    public function setCustomAttribute(string $key, array|bool|float|int|string $value): void
+    public function setCustomAttribute(string $key, array|bool|float|int|string|null $value): void
     {
         $this->_customAttributes[$key] = $value;
     }
