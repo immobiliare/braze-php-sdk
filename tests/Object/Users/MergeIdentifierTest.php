@@ -52,4 +52,54 @@ class MergeIdentifierTest extends TestCase
             [$mergeIdentifier],
         ];
     }
+
+    /**
+     * @dataProvider validEmailIdentifierProvider
+     * @doesNotPerformAssertions
+     */
+    public function testValidEmailIdentifier(MergeIdentifier $mergeIdentifier): void
+    {
+        $mergeIdentifier->validate(true);
+    }
+
+    public function validEmailIdentifierProvider(): array
+    {
+        $mergeIdentifier = new MergeIdentifier();
+        $mergeIdentifier->email = 'email@email.it';
+        $mergeIdentifier->prioritization = ['unidentified', 'most_recently_updated'];
+
+        return [
+            [$mergeIdentifier],
+        ];
+    }
+
+    /**
+     * @dataProvider invalidEmailIdentifierProvider
+     */
+    public function testInvalidEmailIdentifier(MergeIdentifier $mergeIdentifier): void
+    {
+        $this->expectException(ValidationException::class);
+
+        $mergeIdentifier->validate(false);
+    }
+
+    public function invalidEmailIdentifierProvider(): array
+    {
+        $mergeIdentifier1 = new MergeIdentifier();
+        $mergeIdentifier1->email = 'email@email.it';
+
+        $mergeIdentifier2 = new MergeIdentifier();
+        $mergeIdentifier2->email = 'email@email.it';
+        $mergeIdentifier2->prioritization = ['email'];
+
+        $mergeIdentifier3 = new MergeIdentifier();
+        $mergeIdentifier3->email = 'email@email.it';
+        $mergeIdentifier3->prioritization = ['identified', 'unidentified'];
+
+        return [
+            [$mergeIdentifier1],
+            [$mergeIdentifier2],
+            [$mergeIdentifier3],
+        ];
+    }
 }
