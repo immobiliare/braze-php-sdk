@@ -1,13 +1,13 @@
 Braze PHP SDK
 ============
 
-![CI](https://github.com/immobiliare/braze-php-sdk/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/immobiliare/braze-php-sdk/branch/main/graph/badge.svg?token=8H5dESJuiq)](https://codecov.io/gh/immobiliare/braze-php-sdk)
-[![Latest Stable Version](http://poser.pugx.org/immobiliarelabs/braze-sdk/v)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
-[![Total Downloads](http://poser.pugx.org/immobiliarelabs/braze-sdk/downloads)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
-[![Latest Unstable Version](http://poser.pugx.org/immobiliarelabs/braze-sdk/v/unstable)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
-[![License](http://poser.pugx.org/immobiliarelabs/braze-sdk/license)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
-[![PHP Version Require](http://poser.pugx.org/immobiliarelabs/braze-sdk/require/php)](https://packagist.org/packages/immobiliarelabs/braze-sdk)
+![CI](https://github.com/immobiliare/braze-php-sdk/workflows/CI/badge.svg) 
+[![codecov](https://codecov.io/gh/immobiliare/braze-php-sdk/branch/main/graph/badge.svg?token=8H5dESJuiq)](https://codecov.io/gh/immobiliare/braze-php-sdk) 
+[![Latest Stable Version](https://poser.pugx.org/immobiliarelabs/braze-sdk/v)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![Total Downloads](https://poser.pugx.org/immobiliarelabs/braze-sdk/downloads)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![Latest Unstable Version](https://poser.pugx.org/immobiliarelabs/braze-sdk/v/unstable)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![License](https://poser.pugx.org/immobiliarelabs/braze-sdk/license)](https://packagist.org/packages/immobiliarelabs/braze-sdk) 
+[![PHP Version Require](https://poser.pugx.org/immobiliarelabs/braze-sdk/require/php)](https://packagist.org/packages/immobiliarelabs/braze-sdk)
 
 > A PHP client to interact with Braze API
 
