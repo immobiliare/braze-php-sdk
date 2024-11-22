@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "ext-json": "*",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
@@ -19,13 +19,13 @@
         "symfony/http-client-contracts": "^2.4 || ^3.0"
     },
     "require-dev": {
-        "symfony/http-client": "^5.3 || ^6.0",
+        "symfony/http-client": "^5.3 || ^6.0 || ^7.0",
         "nyholm/psr7": "^1.4",
-        "phpunit/phpunit": "^8.5 || ^9.3",
+        "phpunit/phpunit": "^9.3",
         "friendsofphp/php-cs-fixer": "^3.3"
     },
     "suggest": {
-        "symfony/http-client": "^5.3 || ^6.0",
+        "symfony/http-client": "^5.3 || ^6.0 || ^7.0",
         "nyholm/psr7": "^1.4",
         "psr/http-client-implementation": "^1.0",
         "psr/http-factory-implementation": "^1.0",

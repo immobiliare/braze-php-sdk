@@ -1,15 +1,11 @@
 services:
-  php-80: &php
-    build: docker/php-8.0
-    container_name: braze-php-sdk-8.0
+  php-81: &php
+    build: docker/php-8.1
+    container_name: braze-php-sdk-8.1
     working_dir: /app
     tty: true
     volumes:
       - .:/app:cached
-  php-81:
-    <<: *php
-    build: docker/php-8.1
-    container_name: braze-php-sdk-8.1
   php-82:
     <<: *php
     build: docker/php-8.2
