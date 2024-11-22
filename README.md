@@ -194,11 +194,11 @@ The response objects will be filled with the values obtained only after the call
 
 ## Compatibility
 
-| Version | Status        | PHP compatibility     | 
-|---      |---            |---                    |
-| 1.x     | maintained    | `>=7.2`               |
-| 2.x     | maintained    | `>=8.0`               |
-
+| Version | Status       | PHP compatibility | 
+|---------|--------------|-------------------|
+| 1.x     | unmaintained | `>=7.2`           |
+| 2.x     | maintained   | `>=8.0`           |
+| 3.x     | maintained   | `>=8.1`           |
 
 ## Requirements
 
