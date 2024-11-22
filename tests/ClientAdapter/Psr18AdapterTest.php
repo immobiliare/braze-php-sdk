@@ -147,4 +147,35 @@ class Psr18AdapterTest extends TestCase
 
         self::assertSame(200, $resolvedResponse->getStatusCode());
     }
+
+    public function testSetConnectionTimeout(): void
+    {
+        self::expectException(\RuntimeException::class);
+
+        $this->psr18Adapter->setConnectionTimeout(1.0);
+    }
+
+
+    public function testGetConnectionTimeout(): void
+    {
+        self::expectException(\RuntimeException::class);
+
+        $this->psr18Adapter->getConnectionTimeout();
+    }
+
+
+    public function testSetOverallTimeout(): void
+    {
+        self::expectException(\RuntimeException::class);
+
+        $this->psr18Adapter->setOverallTimeout(1.0);
+    }
+
+
+    public function testGetOverallTimeout(): void
+    {
+        self::expectException(\RuntimeException::class);
+
+        $this->psr18Adapter->getOverallTimeout();
+    }
 }

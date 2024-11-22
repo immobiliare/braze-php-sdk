@@ -29,6 +29,9 @@ class Psr18Adapter implements ClientAdapterInterface
 
     private ?UriInterface $baseURI = null;
 
+    private ?float $connectionTimeout = null;
+    private ?float $overallTimeout = null;
+
     public function __construct(ClientInterface $client, UriFactoryInterface $uriFactory, RequestFactoryInterface $requestFactory, StreamFactoryInterface $streamFactory)
     {
         $this->client = $client;
@@ -91,5 +94,25 @@ class Psr18Adapter implements ClientAdapterInterface
     public function resolveResponse($httpResponse): ClientResolvedResponse
     {
         return new ClientResolvedResponse($httpResponse->getStatusCode(), $httpResponse->getBody());
+    }
+
+    public function setConnectionTimeout(?float $connectionTimeout): void
+    {
+        throw new \RuntimeException('Psr18Adapter does not support timeouts');
+    }
+
+    public function setOverallTimeout(?float $overallTimeout): void
+    {
+        throw new \RuntimeException('Psr18Adapter does not support timeouts');
+    }
+
+    public function getConnectionTimeout(): ?float
+    {
+        throw new \RuntimeException('Psr18Adapter does not support timeouts');
+    }
+
+    public function getOverallTimeout(): ?float
+    {
+        throw new \RuntimeException('Psr18Adapter does not support timeouts');
     }
 }

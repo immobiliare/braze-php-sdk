@@ -149,6 +149,16 @@ class Braze
         $this->strictValidation = $active && $strict;
     }
 
+    public function setConnectionTimeout(?float $connectionTimeout): void
+    {
+        $this->client->setConnectionTimeout($connectionTimeout);
+    }
+
+    public function setOverallTimeout(?float $overallTimeout): void
+    {
+        $this->client->setOverallTimeout($overallTimeout);
+    }
+
     public function getDryRun(): bool
     {
         return $this->dryRun;
@@ -162,5 +172,15 @@ class Braze
     public function getStrictValidation(): bool
     {
         return $this->strictValidation;
+    }
+
+    public function getConnectionTimeout(): ?float
+    {
+        return $this->client->getConnectionTimeout();
+    }
+
+    public function getOverallTimeout(): ?float
+    {
+        return $this->client->getOverallTimeout();
     }
 }
