@@ -99,6 +99,15 @@ $request->events = [$event];
 $response = $braze->users()->track($request, false);
 ```
 
+You can also set connection and overall timeout.
+
+```php
+$braze->setConnectionTimeout(2.0);
+$braze->setOverallTimeout(3.0);
+```
+
+Currently, SymfonyAdapter supports them, while Psr18Adapter does not.
+
 You can see a few complete [examples](./examples) in the repository.
 
 ### Custom user attributes

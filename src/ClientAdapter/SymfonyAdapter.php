@@ -21,6 +21,9 @@ class SymfonyAdapter implements ClientAdapterInterface
 
     private ?string $baseURI = null;
 
+    private ?float $connectionTimeout = null;
+    private ?float $overallTimeout = null;
+
     public function __construct(HttpClientInterface $client)
     {
         $this->client = $client;
@@ -42,6 +45,8 @@ class SymfonyAdapter implements ClientAdapterInterface
             'base_uri' => $this->baseURI,
             'headers' => $this->headers,
             'body' => $body,
+            'timeout' => $this->connectionTimeout,
+            'max_duration' => $this->overallTimeout ?? 0,
         ];
 
         try {
@@ -65,5 +70,25 @@ class SymfonyAdapter implements ClientAdapterInterface
         } catch (ClientExceptionInterface|RedirectionExceptionInterface $clientException) {
             throw new ClientException($clientException->getMessage(), 0, $clientException);
         }
+    }
+
+    public function setConnectionTimeout(?float $connectionTimeout): void
+    {
+        $this->connectionTimeout = $connectionTimeout;
+    }
+
+    public function setOverallTimeout(?float $overallTimeout): void
+    {
+        $this->overallTimeout = $overallTimeout;
+    }
+
+    public function getConnectionTimeout(): ?float
+    {
+        return $this->connectionTimeout;
+    }
+
+    public function getOverallTimeout(): ?float
+    {
+        return $this->overallTimeout;
     }
 }

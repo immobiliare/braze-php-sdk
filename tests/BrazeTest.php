@@ -48,4 +48,22 @@ class BrazeTest extends TestCase
         $resolvedResponseCount = $this->instance->flush();
         $this->assertSame(1, $resolvedResponseCount);
     }
+
+    public function testSetConnectionTimeout(): void
+    {
+        $timeout = 1.2;
+
+        $this->instance->setConnectionTimeout($timeout);
+
+        $this->assertSame($timeout, $this->instance->getConnectionTimeout());
+    }
+
+    public function testSetOverallTimeout(): void
+    {
+        $timeout = 2.0;
+
+        $this->instance->setOverallTimeout($timeout);
+
+        $this->assertSame($timeout, $this->instance->getOverallTimeout());
+    }
 }

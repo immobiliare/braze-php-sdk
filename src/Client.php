@@ -107,4 +107,24 @@ class Client
 
         return $resolvedResponseCount;
     }
+
+    public function setConnectionTimeout(?float $connectionTimeout): void
+    {
+        $this->adapter->setConnectionTimeout($connectionTimeout);
+    }
+
+    public function setOverallTimeout(?float $overallTimeout): void
+    {
+        $this->adapter->setOverallTimeout($overallTimeout);
+    }
+
+    public function getConnectionTimeout(): ?float
+    {
+        return $this->adapter->getConnectionTimeout();
+    }
+
+    public function getOverallTimeout(): ?float
+    {
+        return $this->adapter->getOverallTimeout();
+    }
 }

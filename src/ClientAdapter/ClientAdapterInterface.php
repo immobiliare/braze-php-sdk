@@ -33,4 +33,12 @@ interface ClientAdapterInterface
      * @throws ClientException
      */
     public function resolveResponse(mixed $httpResponse): ClientResolvedResponse;
+
+    public function setConnectionTimeout(?float $connectionTimeout): void;
+
+    public function setOverallTimeout(?float $overallTimeout): void;
+
+    public function getConnectionTimeout(): ?float;
+
+    public function getOverallTimeout(): ?float;
 }
