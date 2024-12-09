@@ -34,9 +34,9 @@ class Braze
 
     private bool $strictValidation = true;
 
-    public function __construct(ClientAdapterInterface $clientAdapter, string $apiKey, ?string $restEndpoint = null)
+    public function __construct(ClientAdapterInterface $clientAdapter, string $apiKey, ?string $restEndpoint = null, bool $forceRestEndpoint = false)
     {
-        $this->client = new Client($clientAdapter, $apiKey, new Region($restEndpoint ?? Region::US01));
+        $this->client = new Client($clientAdapter, $apiKey, new Region($restEndpoint ?? Region::US01, $forceRestEndpoint));
     }
 
     public function getClient(): Client
