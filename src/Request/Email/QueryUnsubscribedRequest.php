@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Request\Email;
 
+use DateTimeInterface;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
 class QueryUnsubscribedRequest extends BaseRequest
