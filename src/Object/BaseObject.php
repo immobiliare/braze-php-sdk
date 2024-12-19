@@ -39,10 +39,32 @@ abstract class BaseObject implements \JsonSerializable, ValidationInterface
                 continue;
             }
 
-            if (is_scalar($paramValue)) {
-                $this->$paramKey = $paramValue;
+            try {
+                if (
+                    is_scalar($paramValue)
+                    || (!is_array($paramValue) && !empty($paramValue) && $this->isInstanceOf($paramKey, $paramValue))
+                ) {
+                    $this->$paramKey = $paramValue;
+                }
+            } catch (\ReflectionException) {
+                continue;
             }
         }
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
+    private function isInstanceOf(mixed $paramKey, mixed $paramValue): bool
+    {
+        if (preg_match('/\|/', $paramKey)) {
+            return false;
+        }
+        $reflectionProperty = new \ReflectionProperty($this, $paramKey);
+        $reflectionClass = new \ReflectionClass($paramValue);
+
+        return $reflectionClass->isSubclassOf($reflectionProperty->getType()->getName())
+            || $reflectionClass->getName() === $reflectionProperty->getType()->getName();
     }
 
     public function validate(bool $strict): void
