@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Request\Segments;
 
+use DateTimeInterface;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
