@@ -56,7 +56,7 @@ class Campaigns extends Endpoint
      */
     public function analytics(AnalyticsRequest $request, bool $resolveResponse = true): AnalyticsResponse
     {
-        return $this->makeRequest('POST', '/campaigns/data_series', $request, AnalyticsResponse::class, $resolveResponse);
+        return $this->makeRequest('GET', '/campaigns/data_series', $request, AnalyticsResponse::class, $resolveResponse);
     }
 
     /**
@@ -64,7 +64,7 @@ class Campaigns extends Endpoint
      */
     public function details(DetailsRequest $request, bool $resolveResponse = true): DetailsResponse
     {
-        return $this->makeRequest('POST', '/campaigns/details', $request, DetailsResponse::class, $resolveResponse);
+        return $this->makeRequest('GET', '/campaigns/details', $request, DetailsResponse::class, $resolveResponse);
     }
 
     /**
@@ -72,6 +72,6 @@ class Campaigns extends Endpoint
      */
     public function list(ListRequest $request, bool $resolveResponse = true): ListResponse
     {
-        return $this->makeRequest('POST', '/campaigns/list', $request, ListResponse::class, $resolveResponse);
+        return $this->makeRequest('GET', '/campaigns/list', $request, ListResponse::class, $resolveResponse);
     }
 }
