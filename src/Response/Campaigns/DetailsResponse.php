@@ -2,6 +2,7 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Response\Campaigns;
 
+use DateTimeImmutable;
 use DateTimeInterface;
 use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
@@ -34,8 +35,27 @@ class DetailsResponse extends BaseResponse
 
     public ?array $conversion_behaviors = null;
 
+    /**
+     * @throws \Exception
+     */
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {
+        if (isset($params['created_at']) && is_string($params['created_at'])) {
+            $this->created_at = new DateTimeImmutable($params['created_at']);
+        }
+
+        if (isset($params['updated_at']) && is_string($params['updated_at'])) {
+            $this->updated_at = new DateTimeImmutable($params['updated_at']);
+        }
+
+        if (isset($params['first_sent']) && is_string($params['first_sent'])) {
+            $this->first_sent = new DateTimeImmutable($params['first_sent']);
+        }
+
+        if (isset($params['last_sent']) && is_string($params['last_sent'])) {
+            $this->last_sent = new DateTimeImmutable($params['last_sent']);
+        }
+
         parent::fillFromArray($params);
 
         $this->channels = $params['channels'] ?? [];
