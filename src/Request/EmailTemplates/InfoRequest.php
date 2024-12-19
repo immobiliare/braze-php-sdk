@@ -2,7 +2,6 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Request\EmailTemplates;
 
-use DateTimeInterface;
 use ImmobiliareLabs\BrazeSDK\Exception\ValidationException;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 
