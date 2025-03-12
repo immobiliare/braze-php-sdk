@@ -93,7 +93,11 @@ class Psr18Adapter implements ClientAdapterInterface
      */
     public function resolveResponse($httpResponse): ClientResolvedResponse
     {
-        return new ClientResolvedResponse($httpResponse->getStatusCode(), $httpResponse->getBody());
+        return new ClientResolvedResponse(
+            $httpResponse->getStatusCode(),
+            $httpResponse->getBody(),
+            $httpResponse->getHeaders()
+        );
     }
 
     public function setConnectionTimeout(?float $connectionTimeout): void

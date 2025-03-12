@@ -3,6 +3,7 @@
 namespace ImmobiliareLabs\BrazeSDK\Response;
 
 use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
+use ImmobiliareLabs\BrazeSDK\Object\ValueObject\RateLimit;
 
 abstract class BaseResponse extends BaseObject
 {
@@ -13,6 +14,8 @@ abstract class BaseResponse extends BaseObject
     private ?string $fatalError;
 
     private ?array $minorErrors;
+
+    private ?RateLimit $rateLimit;
 
     public function setIsSuccess(bool $isSuccess): void
     {
@@ -52,5 +55,15 @@ abstract class BaseResponse extends BaseObject
     public function setMinorErrors(array $minorErrors): void
     {
         $this->minorErrors = $minorErrors;
+    }
+
+    public function getRateLimit(): ?RateLimit
+    {
+        return $this->rateLimit;
+    }
+
+    public function setRateLimit(?RateLimit $rateLimit): void
+    {
+        $this->rateLimit = $rateLimit;
     }
 }
