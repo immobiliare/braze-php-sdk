@@ -4,6 +4,7 @@ namespace ImmobiliareLabs\BrazeSDK;
 
 use ImmobiliareLabs\BrazeSDK\ClientAdapter\ClientAdapterInterface;
 use ImmobiliareLabs\BrazeSDK\Exception\NotValidResponseException;
+use ImmobiliareLabs\BrazeSDK\Object\ValueObject\RateLimit;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 use ImmobiliareLabs\BrazeSDK\Response\BaseResponse;
 
@@ -74,6 +75,7 @@ class Client
         $libResponse->setHttpStatusCode($resolvedResponse->getStatusCode());
         $libResponse->setFatalError($libResponse->isSuccess() ? null : ($body['message'] ?? 'Unknown error'));
         $libResponse->setMinorErrors($body['errors'] ?? []);
+        $libResponse->setRateLimit(RateLimit::fromArray($resolvedResponse->getHeaders()));
 
         $libResponse->fillFromArray($body);
     }

@@ -62,7 +62,11 @@ class SymfonyAdapter implements ClientAdapterInterface
     public function resolveResponse($httpResponse): ClientResolvedResponse
     {
         try {
-            return new ClientResolvedResponse($httpResponse->getStatusCode(), $httpResponse->getContent());
+            return new ClientResolvedResponse(
+                $httpResponse->getStatusCode(),
+                $httpResponse->getContent(),
+                $httpResponse->getHeaders()
+            );
         } catch (TransportExceptionInterface $e) {
             throw new TransportException($e->getMessage(), 0, $e);
         } catch (ServerExceptionInterface $serverException) {

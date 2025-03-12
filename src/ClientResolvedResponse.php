@@ -8,10 +8,13 @@ class ClientResolvedResponse
 
     private string $body;
 
-    public function __construct(int $statusCode, string $body)
+    private array $headers;
+
+    public function __construct(int $statusCode, string $body, array $headers)
     {
         $this->statusCode = $statusCode;
         $this->body = $body;
+        $this->headers = $headers;
     }
 
     public function getStatusCode(): int
@@ -22,5 +25,10 @@ class ClientResolvedResponse
     public function getBody(): string
     {
         return $this->body;
+    }
+
+    public function getHeaders(): array
+    {
+        return $this->headers;
     }
 }

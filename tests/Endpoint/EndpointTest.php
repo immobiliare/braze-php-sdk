@@ -8,6 +8,7 @@ use ImmobiliareLabs\BrazeSDK\ClientResolvedResponse;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Feed;
 use ImmobiliareLabs\BrazeSDK\Endpoint\Users;
 use ImmobiliareLabs\BrazeSDK\Exception\NotValidResponseException;
+use ImmobiliareLabs\BrazeSDK\Object\ValueObject\RateLimit;
 use ImmobiliareLabs\BrazeSDK\Region;
 use ImmobiliareLabs\BrazeSDK\Request\BaseRequest;
 use ImmobiliareLabs\BrazeSDK\Request\Feed\ListRequest;
@@ -40,15 +41,22 @@ class EndpointTest extends TestCase
     /**
      * @dataProvider callsProvider
      */
-    public function testMakeRequest(string $endpointName, string $method, BaseRequest $request, int $httpCode, string $responseBody, bool $isSuccess)
-    {
+    public function testMakeRequest(
+        string      $endpointName,
+        string      $method,
+        BaseRequest $request,
+        int         $httpCode,
+        string      $responseBody,
+        array       $responseHeaders,
+        bool        $isSuccess
+    ) {
         if (null === json_decode($responseBody)) {
             $this->expectException(NotValidResponseException::class);
         }
 
         $this->clientAdapter->expects($this->once())
             ->method('resolveResponse')
-            ->willReturn(new ClientResolvedResponse($httpCode, $responseBody))
+            ->willReturn(new ClientResolvedResponse($httpCode, $responseBody, $responseHeaders))
         ;
 
         $endpoint = new $endpointName($this->braze);
@@ -57,6 +65,14 @@ class EndpointTest extends TestCase
 
         $this->assertSame($httpCode, $response->getHttpStatusCode());
         $this->assertSame($isSuccess, $response->isSuccess());
+        $this->assertInstanceOf(RateLimit::class, $response->getRateLimit());
+
+        if (429 === $httpCode) {
+            $this->assertSame(0, $response->getRateLimit()->remaining);
+        }
+        if (429 > $httpCode) {
+            $this->assertGreaterThan(1, $response->getRateLimit()->remaining);
+        }
 
         // @todo add tests to check errors
         $response->getFatalError();
@@ -70,13 +86,17 @@ class EndpointTest extends TestCase
 
         $listRequest->page = 1;
 
+        $rateLimit = ['X-RateLimit-Limit' => 250000, 'X-RateLimit-Remaining' => 218720, 'X-RateLimit-Reset' => 2128];
+        $rateLimitReached = ['X-RateLimit-Limit' => 250000, 'X-RateLimit-Remaining' => 0, 'X-RateLimit-Reset' => 212];
+
         return [
-            [Users::class, 'track', $trackRequest, 201, '{"message": "success"}', true],
-            [Feed::class, 'list', $listRequest, 201, '{"message": "success"}', true],
-            [Feed::class, 'list', $listRequest, 400, '{"message": "error"}', false],
-            [Feed::class, 'list', $listRequest, 201, '{}', false],
-            [Feed::class, 'list', $listRequest, 201, '{"message": "ok"}', false],
-            [Feed::class, 'list', $listRequest, 500, '', false],
+            [Users::class, 'track', $trackRequest, 201, '{"message": "success"}', $rateLimit, true],
+            [Feed::class, 'list', $listRequest, 201, '{"message": "success"}', $rateLimit, true],
+            [Feed::class, 'list', $listRequest, 400, '{"message": "error"}', $rateLimit, false],
+            [Feed::class, 'list', $listRequest, 201, '{}', $rateLimit, false],
+            [Feed::class, 'list', $listRequest, 201, '{"message": "ok"}', $rateLimit, false],
+            [Feed::class, 'list', $listRequest, 500, '', [], false],
+            [Feed::class, 'list', $listRequest, 429, '{}', $rateLimitReached, false],
         ];
     }
 }
