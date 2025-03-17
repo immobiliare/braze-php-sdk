@@ -86,8 +86,8 @@ class EndpointTest extends TestCase
 
         $listRequest->page = 1;
 
-        $rateLimit = ['X-RateLimit-Limit' => 250000, 'X-RateLimit-Remaining' => 218720, 'X-RateLimit-Reset' => 2128];
-        $rateLimitReached = ['X-RateLimit-Limit' => 250000, 'X-RateLimit-Remaining' => 0, 'X-RateLimit-Reset' => 212];
+        $rateLimit = ['x-ratelimit-limit' => [0 => '250000'], 'x-ratelimit-remaining' => [0 => '218720'], 'x-ratelimit-reset' => [0 => '2128']];
+        $rateLimitReached = ['x-ratelimit-limit' => [0 => '250000'], 'x-ratelimit-remaining' => [0 => '0'], 'x-ratelimit-reset' => [0 => '212']];
 
         return [
             [Users::class, 'track', $trackRequest, 201, '{"message": "success"}', $rateLimit, true],

@@ -8,9 +8,9 @@ use ImmobiliareLabs\BrazeSDK\Object\BaseObject;
 
 class RateLimit extends BaseObject
 {
-    private const LIMIT_HEADER = 'X-RateLimit-Limit';
-    private const REMAINING_HEADER = 'X-RateLimit-Remaining';
-    private const RESET_HEADER = 'X-RateLimit-Reset';
+    private const LIMIT_HEADER = 'x-ratelimit-limit';
+    private const REMAINING_HEADER = 'x-ratelimit-remaining';
+    private const RESET_HEADER = 'x-ratelimit-reset';
 
     public ?int $limit = null;
     public ?int $remaining = null;
@@ -19,13 +19,13 @@ class RateLimit extends BaseObject
     public function fillFromArray(array $params, bool $allowExtraProperties = false): void
     {
         if (key_exists(self::LIMIT_HEADER, $params)) {
-            $this->limit = $params[self::LIMIT_HEADER];
+            $this->limit = (int) $params[self::LIMIT_HEADER][0];
         }
         if (key_exists(self::REMAINING_HEADER, $params)) {
-            $this->remaining = $params[self::REMAINING_HEADER];
+            $this->remaining = (int) $params[self::REMAINING_HEADER][0];
         }
         if (key_exists(self::RESET_HEADER, $params)) {
-            $this->reset = $params[self::RESET_HEADER];
+            $this->reset = (int) $params[self::RESET_HEADER][0];
         }
     }
 }
