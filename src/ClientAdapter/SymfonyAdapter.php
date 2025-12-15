@@ -70,9 +70,19 @@ class SymfonyAdapter implements ClientAdapterInterface
         } catch (TransportExceptionInterface $e) {
             throw new TransportException($e->getMessage(), 0, $e);
         } catch (ServerExceptionInterface $serverException) {
-            throw new ServerException($serverException->getMessage(), 0, $serverException);
+            throw new ServerException($serverException->getMessage(), 0, $serverException, $this->safelyGetResponseContent($serverException->getResponse()));
         } catch (ClientExceptionInterface|RedirectionExceptionInterface $clientException) {
-            throw new ClientException($clientException->getMessage(), 0, $clientException);
+            throw new ClientException($clientException->getMessage(), 0, $clientException, $this->safelyGetResponseContent($clientException->getResponse()));
+        }
+    }
+
+    private function safelyGetResponseContent(ResponseInterface $response): ?string
+    {
+        try {
+            return $response->getContent(false);
+        } catch (\Throwable $e) {
+            // Ignore errors when fetching content to preserve the original exception
+            return null;
         }
     }
 

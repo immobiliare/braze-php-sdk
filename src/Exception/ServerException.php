@@ -2,7 +2,6 @@
 
 namespace ImmobiliareLabs\BrazeSDK\Exception;
 
-class ServerException extends \RuntimeException
+class ServerException extends HttpException
 {
-
 }
