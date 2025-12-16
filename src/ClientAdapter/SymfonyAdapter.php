@@ -13,6 +13,9 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
+/**
+ * @implements ClientAdapterInterface<ResponseInterface>
+ */
 class SymfonyAdapter implements ClientAdapterInterface
 {
     private HttpClientInterface $client;
@@ -56,10 +59,7 @@ class SymfonyAdapter implements ClientAdapterInterface
         }
     }
 
-    /**
-     * @param ResponseInterface $httpResponse
-     */
-    public function resolveResponse($httpResponse): ClientResolvedResponse
+    public function resolveResponse(mixed $httpResponse): ClientResolvedResponse
     {
         try {
             return new ClientResolvedResponse(

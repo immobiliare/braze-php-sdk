@@ -15,6 +15,9 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
 
+/**
+ * @implements ClientAdapterInterface<ResponseInterface>
+ */
 class Psr18Adapter implements ClientAdapterInterface
 {
     private ClientInterface $client;
@@ -88,10 +91,7 @@ class Psr18Adapter implements ClientAdapterInterface
         }
     }
 
-    /**
-     * @param ResponseInterface $httpResponse
-     */
-    public function resolveResponse($httpResponse): ClientResolvedResponse
+    public function resolveResponse(mixed $httpResponse): ClientResolvedResponse
     {
         return new ClientResolvedResponse(
             $httpResponse->getStatusCode(),
