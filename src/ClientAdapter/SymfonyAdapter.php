@@ -57,7 +57,14 @@ class SymfonyAdapter implements ClientAdapterInterface
     }
 
     /**
-     * @param ResponseInterface $httpResponse
+     * Convert a Symfony HTTP response into a ClientResolvedResponse.
+     *
+     * @param ResponseInterface $httpResponse The HTTP response to convert.
+     * @return ClientResolvedResponse Contains the response status code, body content (string|null), and headers (array).
+     *
+     * @throws TransportException If a transport-level error occurs while reading the response.
+     * @throws ServerException If a server-side error (5xx) is encountered; includes response content when available.
+     * @throws ClientException If a client-side or redirection error (4xx/3xx) is encountered; includes response content when available.
      */
     public function resolveResponse($httpResponse): ClientResolvedResponse
     {
@@ -76,6 +83,12 @@ class SymfonyAdapter implements ClientAdapterInterface
         }
     }
 
+    /**
+     * Attempt to retrieve the response body content; return null if content cannot be read.
+     *
+     * @param ResponseInterface $response The HTTP response to read.
+     * @return string|null The response content, or `null` if an error occurred while fetching it.
+     */
     private function safelyGetResponseContent(ResponseInterface $response): ?string
     {
         try {
